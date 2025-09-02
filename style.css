@@ -1,0 +1,72 @@
+:root {
+  --primary-color: #d4af37; /* золотистий */
+  --secondary-color: #e8d5b5; /* беж */
+  --text-color: #333333;
+  --background-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  background: var(--background-color);
+}
+
+.hero {
+  background: url('images/hero.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.services {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.services h2 {
+  margin-bottom: 30px;
+}
+
+.service-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.service {
+  max-width: 300px;
+}
+
+.service img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--secondary-color);
+  margin-top: 50px;
+}
