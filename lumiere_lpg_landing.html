@@ -31,14 +31,13 @@
     }
     .container{max-width:var(--maxw);width:100%;padding:0 20px}
 
+    /* Header */
     header{
-      position:fixed;
-      top:0;left:0;right:0;
+      position:fixed;top:0;left:0;right:0;
       background:rgba(255,255,255,0.95);
       backdrop-filter:blur(8px);
       box-shadow:var(--shadow);
-      z-index:1000;
-      transition:var(--transition);
+      z-index:1000;transition:var(--transition);
     }
     .header-inner{max-width:var(--maxw);margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;gap:14px;align-items:center}
@@ -48,67 +47,68 @@
     nav{display:flex;gap:18px;align-items:center}
     nav a{color:var(--muted);text-decoration:none;font-size:15px;transition:0.2s}
     nav a:hover{color:#000}
-
     .burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
     .burger span{width:24px;height:2px;background:#000;border-radius:1px;transition:var(--transition)}
 
     .mobile-overlay{
       position:fixed;top:0;left:0;right:0;bottom:0;
-      background:transparent;
-      display:none;justify-content:center;align-items:flex-start;padding-top:80px;z-index:999;
+      background:transparent;display:none;justify-content:center;align-items:flex-start;padding-top:80px;z-index:999;
     }
     .mobile-overlay.active{display:flex;animation:fadeIn 0.3s ease forwards;}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-
     .mobile-nav{
       background:#fff;border-radius:20px;padding:20px;width:80%;max-width:320px;display:flex;flex-direction:column;gap:20px;align-items:center;box-shadow:var(--shadow);
       transform:translateY(-20px);opacity:0;transition:all var(--transition);
     }
     .mobile-overlay.active .mobile-nav{transform:translateY(0);opacity:1;}
-
     .mobile-nav a{color:#000;font-weight:600;font-size:18px;text-decoration:none;transition:0.2s}
     .mobile-nav a:hover{opacity:0.7}
 
+    /* Hero */
     .hero{
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:500px;
-      border-radius:20px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      margin-top:20px;
+      position:relative;display:flex;align-items:center;justify-content:center;
+      min-height:520px;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);margin-top:20px;
     }
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,0.4);
-      z-index:1;
-    }
-    .hero img{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      z-index:0;
-    }
-    .hero-content{
-      position:relative;
-      z-index:2;
-      color:#fff;
-      text-align:center;
-      max-width:600px;
-      padding:20px;
-    }
+    .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.4);z-index:1;}
+    .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+    .hero-content{position:relative;z-index:2;color:#fff;text-align:center;max-width:640px;padding:24px}
     .hero-content h1{font-size:42px;margin-bottom:12px}
     .hero-content p{font-size:18px;margin-bottom:20px}
     .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:#fff;color:#000;font-weight:700;text-decoration:none;border:1px solid #fff;cursor:pointer;transition:0.2s}
     .btn:hover{background:transparent;color:#fff}
 
     section{margin-top:40px}
+
+    /* Prices */
+    .packages{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .pkg{
+      background:var(--card);border:1px solid #eee;border-radius:14px;padding:18px;box-shadow:var(--shadow);
+      display:flex;flex-direction:column;gap:8px;position:relative;
+    }
+    .pkg h4{margin:0 0 6px;font-size:18px}
+    .price{font-size:22px;font-weight:800}
+    .note{font-size:13px;color:var(--muted)}
+    .badge{
+      position:absolute;top:14px;right:14px;background:#000;color:#fff;font-size:12px;
+      padding:6px 10px;border-radius:999px;font-weight:700;letter-spacing:.2px;
+    }
+
+    /* FAQ accordion */
+    .faq{display:grid;gap:12px}
+    .faq-item{
+      border:1px solid #eee;border-radius:12px;background:var(--card);box-shadow:var(--shadow);overflow:hidden;
+    }
+    .faq-btn{
+      width:100%;text-align:left;background:transparent;border:0;padding:16px;font-size:16px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+    }
+    .faq-btn span.icon{transition:transform .25s ease}
+    .faq-content{
+      max-height:0;overflow:hidden;transition:max-height .25s ease; padding:0 16px;
+    }
+    .faq-content .inner{padding:0 0 16px;color:var(--muted);font-size:15px}
+    .faq-item.active .faq-content{max-height:400px} /* достатньо для типових відповідей */
+    .faq-item.active .faq-btn span.icon{transform:rotate(45deg)}
+
     footer{margin-top:40px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;padding-bottom:40px}
 
     @media(max-width:768px){
@@ -129,27 +129,24 @@
         </div>
       </div>
       <nav>
-        <a href="#services">Послуги</a>
-        <a href="#results">Результати</a>
         <a href="#prices">Ціни</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Запис</a>
       </nav>
-      <div class="burger" id="burger">
-        <span></span><span></span><span></span>
-      </div>
+      <div class="burger" id="burger"><span></span><span></span><span></span></div>
     </div>
   </header>
 
   <div class="mobile-overlay" id="mobileOverlay">
     <div class="mobile-nav">
-      <a href="#services">Послуги</a>
-      <a href="#results">Результати</a>
       <a href="#prices">Ціни</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Запис</a>
     </div>
   </div>
 
   <div class="container">
+    <!-- HERO -->
     <section class="hero">
       <img src="IMG_1670.PNG" alt="LPG апарат у Lumiere Studio" />
       <div class="hero-content">
@@ -159,19 +156,121 @@
       </div>
     </section>
 
+    <!-- PRICES -->
+    <section id="prices">
+      <h2 style="margin-bottom:14px">Ціни</h2>
+      <div class="packages">
+        <div class="pkg">
+          <span class="badge">-200 грн перший візит</span>
+          <h4>LPG тіло — 45 хв</h4>
+          <div class="price">850 грн</div>
+          <div class="note">Комфортний інтенсив для активного дренажу і тонусу.</div>
+        </div>
+        <div class="pkg">
+          <span class="badge">-200 грн перший візит</span>
+          <h4>LPG тіло — 60 хв</h4>
+          <div class="price">1000 грн</div>
+          <div class="note">Максимальне опрацювання зон + глибший лімфодренаж.</div>
+        </div>
+      </div>
+      <p class="note" style="margin-top:10px">Знижка -200 грн застосовується один раз — на перший візит до студії.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2 style="margin-bottom:14px">FAQ — відповіді на часті питання</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-btn">Чи болить процедура?<span class="icon">＋</span></button>
+          <div class="faq-content"><div class="inner">
+            Відчуття комфортні: працює вакуум і ролики, інтенсивність підлаштовуємо під вас. Синців не залишаємо.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn">Коли видно результат?<span class="icon">＋</span></button>
+          <div class="faq-content"><div class="inner">
+            Помітна «легкість» і зменшення набряків — вже після 1–2 сеансів. Для стійкого ефекту потрібен курс 8–12 процедур 2–3 рази на тиждень.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn">Які покази та що опрацьовуємо?<span class="icon">＋</span></button>
+          <div class="faq-content"><div class="inner">
+            Локальні жирові відкладення, целюліт, набряки, в’ялість шкіри, відновлення після пологів/схуднення, поліпшення рельєфу тіла.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn">Чи є протипоказання?<span class="icon">＋</span></button>
+          <div class="faq-content"><div class="inner">
+            Гострі запальні процеси, онкологія, вагітність, тромбофлебіт, пошкодження шкіри в зоні роботи, декомпенсовані захворювання. Якщо сумніваєтесь — проконсультуємо.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn">Як підготуватися і що вдягати?<span class="icon">＋</span></button>
+          <div class="faq-content"><div class="inner">
+            Візьміть костюм для LPG (можна придбати у студії). Пийте більше води в день процедури та після, щоб підсилити дренаж.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn">Скільки триває сеанс і як часто приходити?<span class="icon">＋</span></button>
+          <div class="faq-content"><div class="inner">
+            Оберіть 45 або 60 хв. Рекомендована частота — 2–3 рази на тиждень протягом курсу, далі — підтримка 1 раз на 1–2 тижні.
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Запис</h2>
+      <form id="main-form">
+        <label>Ім’я</label><input required />
+        <label>Телефон</label><input type="tel" required />
+        <label>Послуга</label>
+        <select><option>LPG 45 хв</option><option>LPG 60 хв</option></select>
+        <button class="btn" type="submit">Відправити</button>
+      </form>
+    </section>
+
     <footer>
       <div>© Lumiere Studio — LPG масаж</div>
       <div>Instagram: @lumiere.lpg.studio</div>
     </footer>
   </div>
 
+  <!-- Binotel (як було) -->
+  <script type="text/javascript">
+  (function(d, w, s) {
+      var widgetHash = '7usW1Fj1cKZ2skmHOfvn', bow = d.createElement(s); bow.type = "text/javascript";
+      bow.async = true;
+      bow.src = '//widgets.binotel.com/b/bocrm/widgets/' + widgetHash + '.xjs';
+      var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(bow, sn);
+  })(document, window, 'script');
+  </script>
+
+  <!-- Mobile nav + FAQ accordion -->
   <script>
+    // Mobile menu
     const burger=document.getElementById('burger');
     const overlay=document.getElementById('mobileOverlay');
     const links=document.querySelectorAll('.mobile-nav a');
-    burger.addEventListener('click',()=>{overlay.classList.toggle('active')});
-    overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('active')});
-    links.forEach(link=>link.addEventListener('click',()=>overlay.classList.remove('active')));
+    burger.addEventListener('click',()=>overlay.classList.toggle('active'));
+    overlay.addEventListener('click',e=>{ if(e.target===overlay) overlay.classList.remove('active') });
+    links.forEach(l=>l.addEventListener('click',()=>overlay.classList.remove('active')));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item .faq-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const item = btn.parentElement;
+        // закриваємо інші
+        document.querySelectorAll('.faq-item').forEach(i=>{ if(i!==item) i.classList.remove('active') });
+        item.classList.toggle('active');
+      });
+    });
   </script>
 </body>
 </html>
