@@ -69,72 +69,52 @@
     .mobile-nav a{color:#000;font-weight:600;font-size:18px;text-decoration:none;transition:0.2s}
     .mobile-nav a:hover{opacity:0.7}
 
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:36px;background:var(--accent);border-radius:20px;box-shadow:var(--shadow);margin-top:20px}
-    .hero-left h1{font-size:38px;margin-bottom:8px}
-    .hero-left p{color:var(--muted);margin-bottom:20px}
-    .kpis{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px}
-    .kpi{background:#fff;padding:12px 16px;border-radius:12px;font-size:14px;border:1px solid #eee}
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:#000;color:#fff;font-weight:700;text-decoration:none;border:1px solid #000;cursor:pointer;transition:0.2s}
-    .btn:hover{opacity:0.8}
-    .btn.ghost{background:transparent;color:#000}
-
-    .card{background:var(--card);padding:22px;border-radius:16px;box-shadow:var(--shadow)}
-    .card h3{margin:0 0 8px}
-    .price{font-size:22px;font-weight:700}
-    .small{color:var(--muted);font-size:13px}
-    .hero-img{width:100%;height:250px;border-radius:12px;object-fit:cover}
+    .hero{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:500px;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      margin-top:20px;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.4);
+      z-index:1;
+    }
+    .hero img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      z-index:0;
+    }
+    .hero-content{
+      position:relative;
+      z-index:2;
+      color:#fff;
+      text-align:center;
+      max-width:600px;
+      padding:20px;
+    }
+    .hero-content h1{font-size:42px;margin-bottom:12px}
+    .hero-content p{font-size:18px;margin-bottom:20px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:#fff;color:#000;font-weight:700;text-decoration:none;border:1px solid #fff;cursor:pointer;transition:0.2s}
+    .btn:hover{background:transparent;color:#fff}
 
     section{margin-top:40px}
-
-    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:28px}
-    .feature{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
-    .feature h4{margin-bottom:8px}
-    .feature p{color:var(--muted);font-size:14px}
-
-    .packages{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-    .pkg{padding:18px;border-radius:12px;background:var(--card);box-shadow:var(--shadow)}
-    .pkg h4{margin-bottom:6px}
-    .pkg .price{font-size:20px}
-
-    .ba{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
-    .ba img{width:100%;height:180px;object-fit:cover;border-radius:12px}
-
-    .faq{display:grid;gap:10px}
-    .q{padding:14px;border-radius:10px;background:var(--card);box-shadow:var(--shadow)}
-
-    .doubt {
-      text-align:center;
-      background:var(--accent);
-      padding:40px 20px;
-      border-radius:16px;
-      box-shadow:var(--shadow);
-      margin-top:40px;
-    }
-    .doubt a {
-      color:#000;
-      font-weight:700;
-      text-decoration:none;
-      font-size:18px;
-      border:1px solid #000;
-      padding:12px 20px;
-      border-radius:12px;
-      display:inline-block;
-      margin-top:12px;
-      transition:0.2s;
-    }
-    .doubt a:hover { background:#000; color:#fff; }
-
     footer{margin-top:40px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;padding-bottom:40px}
 
-    input,select{width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;background:#fff;color:#000;margin-bottom:10px}
-    label{font-size:13px;color:var(--muted);margin-bottom:6px;display:block}
-
     @media(max-width:768px){
-      .hero{grid-template-columns:1fr;}
+      .hero-content h1{font-size:28px}
       nav{display:none}
       .burger{display:flex}
-      h1{font-size:28px}
     }
   </style>
 </head>
@@ -171,73 +151,12 @@
 
   <div class="container">
     <section class="hero">
-      <div class="hero-left">
-        <h1>LPG-масаж у Lumiere — пружна шкіра та контур тіла</h1>
-        <p>Сеанси LPG з помітним ефектом: зменшення целюліту, підтягування шкіри, корекція об’ємів.</p>
-        <div class="kpis">
-          <div class="kpi"><strong>8–12</strong> сеансів — курс</div>
-          <div class="kpi"><strong>Перший результат</strong> після 2–3 сеансів</div>
-          <div class="kpi"><strong>Комфортно</strong> та безпечно</div>
-        </div>
-        <div class="cta-row">
-          <a class="btn" href="#contact">Забронювати</a>
-          <a class="btn ghost" href="#prices">Ціни</a>
-        </div>
+      <img src="IMG_1670.PNG" alt="LPG апарат у Lumiere Studio" />
+      <div class="hero-content">
+        <h1>LPG-масаж у Lumiere Studio</h1>
+        <p>Професійна апаратна методика для тонусу, підтягнення та зменшення об’ємів.</p>
+        <a class="btn" href="#contact">Записатись на сеанс</a>
       </div>
-      <aside class="card">
-        <img class="hero-img" src="https://images.unsplash.com/photo-1620912189860-99c0056e9c6a?auto=format&fit=crop&w=800&q=80" alt="LPG масаж" />
-        <h3>Пропозиція для нових клієнтів</h3>
-        <div class="price">1 сеанс від <strong>350 грн</strong></div>
-        <div class="small">Пакети зі знижкою</div>
-      </aside>
-    </section>
-
-    <section id="services" class="features">
-      <div class="feature"><h4>Безболісно</h4><p>М'який механічний вплив без болю і слідів.</p></div>
-      <div class="feature"><h4>Зменшення целюліту</h4><p>Покращує кровообіг і стан шкіри.</p></div>
-      <div class="feature"><h4>Ліфтинг-ефект</h4><p>Шкіра стає підтягнутою і гладкою після курсу процедур.</p></div>
-    </section>
-
-    <section id="results">
-      <h2>Результати — до та після</h2>
-      <div class="ba">
-        <img src="https://images.unsplash.com/photo-1604335399105-01902b94caaa?auto=format&fit=crop&w=800&q=80" alt="До LPG масажу" />
-        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc7c7?auto=format&fit=crop&w=800&q=80" alt="Після LPG масажу" />
-      </div>
-    </section>
-
-    <section id="prices">
-      <h2>Ціни</h2>
-      <div class="packages">
-        <div class="pkg"><h4>1 сеанс тіла</h4><div class="price">350 грн</div></div>
-        <div class="pkg"><h4>Курс 8 сеансів</h4><div class="price">2400 грн</div></div>
-        <div class="pkg"><h4>LPG обличчя</h4><div class="price">300 грн</div></div>
-      </div>
-    </section>
-
-    <section id="faq">
-      <h2>FAQ</h2>
-      <div class="faq">
-        <div class="q"><strong>Чи боляче?</strong><div class="small">Ні, процедура комфортна.</div></div>
-        <div class="q"><strong>Коли буде ефект?</strong><div class="small">Після 2–3 сеансів уже видно зміни.</div></div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Запис</h2>
-      <form id="main-form">
-        <label>Ім’я</label><input required />
-        <label>Телефон</label><input type="tel" required />
-        <label>Послуга</label>
-        <select><option>Тіло</option><option>Обличчя</option></select>
-        <button class="btn" type="submit">Відправити</button>
-      </form>
-    </section>
-
-    <section class="doubt">
-      <h3>Залишились сумніви?</h3>
-      <p>Напишіть нам в Instagram — ми відповімо на всі питання 💬</p>
-      <a href="https://instagram.com/lumiere.lpg.studio" target="_blank">Написати в Instagram</a>
     </section>
 
     <footer>
@@ -246,25 +165,12 @@
     </footer>
   </div>
 
-  <script type="text/javascript">
-  (function(d, w, s) {
-      var widgetHash = '7usW1Fj1cKZ2skmHOfvn', bow = d.createElement(s); bow.type = "text/javascript";
-      bow.async = true;
-      bow.src = '//widgets.binotel.com/b/bocrm/widgets/' + widgetHash + '.xjs';
-      var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(bow, sn);
-  })(document, window, 'script');
-  </script>
-  
   <script>
     const burger=document.getElementById('burger');
     const overlay=document.getElementById('mobileOverlay');
     const links=document.querySelectorAll('.mobile-nav a');
-    burger.addEventListener('click',()=>{
-      overlay.classList.toggle('active');
-    });
-    overlay.addEventListener('click',e=>{
-      if(e.target===overlay)overlay.classList.remove('active');
-    });
+    burger.addEventListener('click',()=>{overlay.classList.toggle('active')});
+    overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('active')});
     links.forEach(link=>link.addEventListener('click',()=>overlay.classList.remove('active')));
   </script>
 </body>
