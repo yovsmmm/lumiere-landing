@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LPG масаж — Lumière</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      z-index: 1000;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #777;
+    }
+    .burger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .burger span {
+      height: 3px;
+      width: 25px;
+      background: #000;
+      border-radius: 3px;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem 0;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+      }
+      nav ul.active {
+        transform: translateY(0);
+      }
+      .burger {
+        display: flex;
+      }
+    }
+    section {
+      padding: 120px 20px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero {
+      text-align: center;
+    }
+    .hero img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <h2>LUMIÈRE</h2>
+      <nav>
+        <ul>
+          <li><a href="#about">Про процедуру</a></li>
+          <li><a href="#benefits">Результати</a></li>
+          <li><a href="#pricing">Ціни</a></li>
+          <li><a href="#contact">Контакти</a></li>
+        </ul>
+      </nav>
+      <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>LPG масаж у студії Lumière</h1>
+    <p>Сучасна апаратна методика моделювання фігури та підтяжки шкіри.</p>
+    <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1200&q=80" alt="LPG масаж">
+  </section>
+
+  <section id="about">
+    <h2>Про процедуру</h2>
+    <p>LPG масаж — це апаратна методика, яка стимулює лімфодренаж, покращує тонус шкіри та допомагає позбутись целюліту.</p>
+  </section>
+
+  <section id="benefits">
+    <h2>Результати</h2>
+    <ul>
+      <li>Підтяжка шкіри</li>
+      <li>Зменшення об'ємів</li>
+      <li>Покращення рельєфу</li>
+    </ul>
+  </section>
+
+  <section id="pricing">
+    <h2>Ціни</h2>
+    <p>Тіло — від 500 грн</p>
+    <p>Обличчя — від 400 грн</p>
+  </section>
+
+  <section id="contact">
+    <h2>Контакти</h2>
+    <p>📍 Ірпінь, вул. Центральна 25</p>
+    <p>📞 +380 97 000 00 00</p>
+  </section>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const menu = document.querySelector('nav ul');
+    const menuLinks = document.querySelectorAll('nav a');
+
+    burger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('active');
+      });
+    });
+  </script>
+
+  <script type="text/javascript">
+  (function(d, w, s) {
+      var widgetHash = '7usW1Fj1cKZ2skmHOfvn', bow = d.createElement(s); bow.type = "text/javascript";
+      bow.async = true;
+      bow.src = '//widgets.binotel.com/b/bocrm/widgets/' + widgetHash + '.xjs';
+      var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(bow, sn);
+  })(document, window, 'script');
+  </script>
+</body>
+</html>
