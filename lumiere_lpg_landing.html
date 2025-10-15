@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lumiere Studio — LPG масаж</title>
-  <meta name="description" content="Lumiere Studio — LPG масаж: курс процедур для пружної шкіри, зменшення целюліту та відновлення контуру тіла. Запис онлайн." />
+  <title>LUMIÈRE — LPG & LASER STUDIO</title>
+  <meta name="description" content="LUMIÈRE — LPG & LASER STUDIO: LPG-масаж, ендосфера, пресотерапія, RF-ліфтинг. Професійний догляд, підтягнуте тіло та гладка шкіра. Запис онлайн." />
   <style>
     :root{
       --bg:#fff;
@@ -42,7 +42,7 @@
     .header-inner{max-width:var(--maxw);margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;gap:14px;align-items:center}
     .logo img{width:48px;height:48px;border-radius:12px;object-fit:cover}
-    .studio{font-size:18px;font-weight:600}
+    .studio{font-size:18px;font-weight:700;letter-spacing:.06em}
     .sub{font-size:13px;color:var(--muted)}
     nav{display:flex;gap:18px;align-items:center}
     nav a{color:var(--muted);text-decoration:none;font-size:15px;transition:0.2s}
@@ -93,24 +93,18 @@
       padding:6px 10px;border-radius:999px;font-weight:700;letter-spacing:.2px;
     }
 
-    /* FAQ accordion */
+    /* FAQ */
     .faq{display:grid;gap:12px}
-    .faq-item{
-      border:1px solid #eee;border-radius:12px;background:var(--card);box-shadow:var(--shadow);overflow:hidden;
-    }
-    .faq-btn{
-      width:100%;text-align:left;background:transparent;border:0;padding:16px;font-size:16px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:#000;
-    }
+    .faq-item{border:1px solid #eee;border-radius:12px;background:var(--card);box-shadow:var(--shadow);overflow:hidden;}
+    .faq-btn{width:100%;text-align:left;background:transparent;border:0;padding:16px;font-size:16px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:#000;}
     .faq-btn span.icon{transition:transform .25s ease;color:#000;}
-    .faq-content{
-      max-height:0;overflow:hidden;transition:max-height .25s ease; padding:0 16px;
-    }
+    .faq-content{max-height:0;overflow:hidden;transition:max-height .25s ease; padding:0 16px;}
     .faq-content .inner{padding:0 0 16px;color:var(--muted);font-size:15px}
     .faq-item.active .faq-content{max-height:400px}
     .faq-item.active .faq-btn span.icon{transform:rotate(45deg)}
 
+    /* Footer */
     footer{margin-top:40px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;padding-bottom:40px}
-
     @media(max-width:768px){
       .hero-content h1{font-size:28px}
       nav{display:none}
@@ -123,7 +117,9 @@
   <header>
     <div class="header-inner">
       <div class="brand">
-        <div class="logo"><img src="b479c408-d794-4400-94c2-7954892c2725.jpeg" alt="Lumiere logo"></div>
+        <div class="logo">
+          <img src="b479c408-d794-4400-94c2-7954892c2725.jpeg" alt="LUMIÈRE logo">
+        </div>
         <div>
           <div class="studio">LUMIÈRE</div>
           <div class="sub">LPG & LASER STUDIO</div>
@@ -203,17 +199,31 @@
     <!-- CONTACT -->
     <section id="contact" style="text-align:center;background:#f5f5f5;padding:40px;border-radius:16px;box-shadow:var(--shadow);">
       <h2>Запис</h2>
-      <form id="main-form" style="max-width:400px;margin:0 auto;">
-        <label>Ім’я</label><input required />
-        <label>Телефон</label><input type="tel" required />
-        <label>Послуга</label>
-        <select><option>LPG 45 хв</option><option>LPG 60 хв</option></select>
-        <button class="btn" type="submit">Відправити</button>
-      </form>
+
+      <!-- BookOn widget -->
+      <div id="bookon-widget" style="max-width:520px;margin:0 auto;"></div>
+
+      <div style="margin-top:24px;">
+        <a href="tel:+380679663926" class="btn" style="background:#000;color:#fff;border-color:#000;">📞 Подзвонити: 067 966 39 26</a>
+      </div>
+
       <p style="margin-top:24px;font-size:16px;color:#000;">
         Якщо у вас залишились сумніви чи запитання — <br>
         <a href="https://instagram.com/lumiere.lpg.studio" target="_blank" style="color:#000;font-weight:700;text-decoration:underline;">напишіть нам в Instagram</a>
       </p>
+
+      <p style="margin-top:16px;font-size:15px;color:#555;">📍 Ірпінь, вул. Садова 31</p>
+
+      <!-- BookOn script -->
+      <script>
+        (function(){
+          var w=document.createElement("script");
+          w.type="text/javascript"; w.async=true;
+          w.src="https://widget.bookonapp.com/js/widget.js?id=7usW1Fj1cKZ2skmHOfvn";
+          var s=document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(w,s);
+        })();
+      </script>
     </section>
 
     <footer>
@@ -224,6 +234,7 @@
 
   <!-- Scripts -->
   <script>
+    // Mobile nav
     const burger=document.getElementById('burger');
     const overlay=document.getElementById('mobileOverlay');
     const links=document.querySelectorAll('.mobile-nav a');
