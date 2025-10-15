@@ -41,7 +41,7 @@
     }
     .header-inner{max-width:var(--maxw);margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;gap:14px;align-items:center}
-    .logo{width:48px;height:48px;border-radius:12px;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}
+    .logo img{width:48px;height:48px;border-radius:12px;object-fit:cover}
     .studio{font-size:18px;font-weight:600}
     .sub{font-size:13px;color:var(--muted)}
     nav{display:flex;gap:18px;align-items:center}
@@ -99,14 +99,14 @@
       border:1px solid #eee;border-radius:12px;background:var(--card);box-shadow:var(--shadow);overflow:hidden;
     }
     .faq-btn{
-      width:100%;text-align:left;background:transparent;border:0;padding:16px;font-size:16px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+      width:100%;text-align:left;background:transparent;border:0;padding:16px;font-size:16px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:#000;
     }
-    .faq-btn span.icon{transition:transform .25s ease}
+    .faq-btn span.icon{transition:transform .25s ease;color:#000;}
     .faq-content{
       max-height:0;overflow:hidden;transition:max-height .25s ease; padding:0 16px;
     }
     .faq-content .inner{padding:0 0 16px;color:var(--muted);font-size:15px}
-    .faq-item.active .faq-content{max-height:400px} /* достатньо для типових відповідей */
+    .faq-item.active .faq-content{max-height:400px}
     .faq-item.active .faq-btn span.icon{transform:rotate(45deg)}
 
     footer{margin-top:40px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;padding-bottom:40px}
@@ -115,6 +115,7 @@
       .hero-content h1{font-size:28px}
       nav{display:none}
       .burger{display:flex}
+      .faq-btn{color:#000;}
     }
   </style>
 </head>
@@ -122,10 +123,10 @@
   <header>
     <div class="header-inner">
       <div class="brand">
-        <div class="logo">L</div>
+        <div class="logo"><img src="b479c408-d794-4400-94c2-7954892c2725.jpeg" alt="Lumiere logo"></div>
         <div>
-          <div class="studio">Lumiere Studio</div>
-          <div class="sub">LPG • Апаратічна косметологія • Ірпінь</div>
+          <div class="studio">LUMIÈRE</div>
+          <div class="sub">LPG & LASER STUDIO</div>
         </div>
       </div>
       <nav>
@@ -182,79 +183,47 @@
       <div class="faq">
         <div class="faq-item">
           <button class="faq-btn">Чи болить процедура?<span class="icon">＋</span></button>
-          <div class="faq-content"><div class="inner">
-            Відчуття комфортні: працює вакуум і ролики, інтенсивність підлаштовуємо під вас. Синців не залишаємо.
-          </div></div>
+          <div class="faq-content"><div class="inner">Відчуття комфортні: працює вакуум і ролики, інтенсивність підлаштовуємо під вас. Синців не залишаємо.</div></div>
         </div>
-
         <div class="faq-item">
           <button class="faq-btn">Коли видно результат?<span class="icon">＋</span></button>
-          <div class="faq-content"><div class="inner">
-            Помітна «легкість» і зменшення набряків — вже після 1–2 сеансів. Для стійкого ефекту потрібен курс 8–12 процедур 2–3 рази на тиждень.
-          </div></div>
+          <div class="faq-content"><div class="inner">Помітна «легкість» і зменшення набряків — вже після 1–2 сеансів. Для стійкого ефекту потрібен курс 8–12 процедур 2–3 рази на тиждень.</div></div>
         </div>
-
         <div class="faq-item">
           <button class="faq-btn">Які покази та що опрацьовуємо?<span class="icon">＋</span></button>
-          <div class="faq-content"><div class="inner">
-            Локальні жирові відкладення, целюліт, набряки, в’ялість шкіри, відновлення після пологів/схуднення, поліпшення рельєфу тіла.
-          </div></div>
+          <div class="faq-content"><div class="inner">Локальні жирові відкладення, целюліт, набряки, в’ялість шкіри, відновлення після пологів/схуднення, поліпшення рельєфу тіла.</div></div>
         </div>
-
         <div class="faq-item">
           <button class="faq-btn">Чи є протипоказання?<span class="icon">＋</span></button>
-          <div class="faq-content"><div class="inner">
-            Гострі запальні процеси, онкологія, вагітність, тромбофлебіт, пошкодження шкіри в зоні роботи, декомпенсовані захворювання. Якщо сумніваєтесь — проконсультуємо.
-          </div></div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-btn">Як підготуватися і що вдягати?<span class="icon">＋</span></button>
-          <div class="faq-content"><div class="inner">
-            Візьміть костюм для LPG (можна придбати у студії). Пийте більше води в день процедури та після, щоб підсилити дренаж.
-          </div></div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-btn">Скільки триває сеанс і як часто приходити?<span class="icon">＋</span></button>
-          <div class="faq-content"><div class="inner">
-            Оберіть 45 або 60 хв. Рекомендована частота — 2–3 рази на тиждень протягом курсу, далі — підтримка 1 раз на 1–2 тижні.
-          </div></div>
+          <div class="faq-content"><div class="inner">Гострі запальні процеси, онкологія, вагітність, тромбофлебіт, пошкодження шкіри в зоні роботи, декомпенсовані захворювання. Якщо сумніваєтесь — проконсультуємо.</div></div>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
+    <section id="contact" style="text-align:center;background:#f5f5f5;padding:40px;border-radius:16px;box-shadow:var(--shadow);">
       <h2>Запис</h2>
-      <form id="main-form">
+      <form id="main-form" style="max-width:400px;margin:0 auto;">
         <label>Ім’я</label><input required />
         <label>Телефон</label><input type="tel" required />
         <label>Послуга</label>
         <select><option>LPG 45 хв</option><option>LPG 60 хв</option></select>
         <button class="btn" type="submit">Відправити</button>
       </form>
+      <p style="margin-top:24px;font-size:16px;color:#000;">
+        Якщо у вас залишились сумніви чи запитання — <br>
+        <a href="https://instagram.com/lumiere.lpg.studio" target="_blank" style="color:#000;font-weight:700;text-decoration:underline;">напишіть нам в Instagram</a>
+      </p>
     </section>
 
     <footer>
-      <div>© Lumiere Studio — LPG масаж</div>
+      <div>© LUMIÈRE — LPG & LASER STUDIO</div>
       <div>Instagram: @lumiere.lpg.studio</div>
     </footer>
   </div>
 
-  <!-- Binotel (як було) -->
-  <script type="text/javascript">
-  (function(d, w, s) {
-      var widgetHash = '7usW1Fj1cKZ2skmHOfvn', bow = d.createElement(s); bow.type = "text/javascript";
-      bow.async = true;
-      bow.src = '//widgets.binotel.com/b/bocrm/widgets/' + widgetHash + '.xjs';
-      var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(bow, sn);
-  })(document, window, 'script');
-  </script>
-
-  <!-- Mobile nav + FAQ accordion -->
+  <!-- Scripts -->
   <script>
-    // Mobile menu
     const burger=document.getElementById('burger');
     const overlay=document.getElementById('mobileOverlay');
     const links=document.querySelectorAll('.mobile-nav a');
@@ -266,7 +235,6 @@
     document.querySelectorAll('.faq-item .faq-btn').forEach(btn=>{
       btn.addEventListener('click',()=>{
         const item = btn.parentElement;
-        // закриваємо інші
         document.querySelectorAll('.faq-item').forEach(i=>{ if(i!==item) i.classList.remove('active') });
         item.classList.toggle('active');
       });
