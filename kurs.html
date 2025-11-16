@@ -283,6 +283,11 @@
     }
 
     /* ТАЙМЕР -40% */
+.timer-btn {
+  margin-top: 8px;
+  padding-inline: 18px;
+}
+    
     .timer-section {
       margin-bottom: 32px;
       background: #fff;
@@ -837,42 +842,51 @@
     </header>
 
     <!-- ТАЙМЕР -40% ДО 18.11.2025 11:00 -->
-    <section class="timer-section" id="early-bird">
-      <div class="timer-inner">
-        <div class="timer-text">
-          <div class="timer-eyebrow">акція раннього бронювання</div>
-          <div class="timer-title">встигни забронювати</div>
-          <p class="timer-subtitle">
-            Залишай заявку до <strong>18.11.2025, 11:00</strong> і отримай
-            <strong>знижку 40% на будь-який рівень навчання</strong> — Базовий, PRO або EXPERT, онлайн чи офлайн.
-          </p>
-          <span class="timer-badge-discount">-40% early bird</span>
-        </div>
+<section class="timer-section" id="early-bird">
+  <div class="timer-inner">
+    <div class="timer-text">
+      <div class="timer-eyebrow">акція раннього бронювання</div>
+      <div class="timer-title">встигни забронювати</div>
+      <p class="timer-subtitle">
+        Залишай заявку до <strong>18.11.2025, 11:00</strong> і отримай
+        <strong>знижку 40% на будь-який рівень навчання</strong> — Базовий, PRO або EXPERT, онлайн чи офлайн.
+      </p>
+      <span class="timer-badge-discount">-40% early bird</span>
+    </div>
 
-        <div class="timer-countdown">
-          <div class="timer-box">
-            <div class="timer-number" id="cd-days">00</div>
-            <div class="timer-label">дні</div>
-          </div>
-          <div class="timer-box">
-            <div class="timer-number" id="cd-hours">00</div>
-            <div class="timer-label">години</div>
-          </div>
-          <div class="timer-box">
-            <div class="timer-number" id="cd-minutes">00</div>
-            <div class="timer-label">хвилини</div>
-          </div>
-          <div class="timer-box">
-            <div class="timer-number" id="cd-seconds">00</div>
-            <div class="timer-label">секунди</div>
-          </div>
-
-          <p class="timer-note" id="cd-note">
-            До завершення спецпропозиції. Знижка -40% діє тільки до 18.11.2025, 11:00 на будь-який рівень курсу.
-          </p>
-        </div>
+    <div class="timer-countdown">
+      <div class="timer-box">
+        <div class="timer-number" id="cd-days">00</div>
+        <div class="timer-label">дні</div>
       </div>
-    </section>
+      <div class="timer-box">
+        <div class="timer-number" id="cd-hours">00</div>
+        <div class="timer-label">години</div>
+      </div>
+      <div class="timer-box">
+        <div class="timer-number" id="cd-minutes">00</div>
+        <div class="timer-label">хвилини</div>
+      </div>
+      <div class="timer-box">
+        <div class="timer-number" id="cd-seconds">00</div>
+        <div class="timer-label">секунди</div>
+      </div>
+
+      <p class="timer-note" id="cd-note">
+        До завершення спецпропозиції. Знижка -40% діє тільки до 18.11.2025, 11:00 на будь-який рівень курсу.
+      </p>
+
+      <button
+        class="btn-primary timer-btn"
+        type="button"
+        onclick="document.getElementById('multi-pay').scrollIntoView({behavior:'smooth'});"
+      >
+        Оплатити зі знижкою -40%
+      </button>
+    </div>
+  </div>
+</section>
+
 
     <!-- ПРО ЩО КУРС -->
     <section class="section" id="about">
