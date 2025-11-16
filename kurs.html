@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Вебінар-практикум з ендосфера терапії: базовий, PRO та EXPERT рівні. Навчання онлайн та офлайн в Ірпені від Lumière LPG Studio. Сертифікат після кожного рівня.">
 
-  <!-- Яскраві, “афішні” шрифти -->
+  <!-- Шрифти -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Anton&display=swap" rel="stylesheet">
@@ -54,13 +54,13 @@
       padding: 24px 16px 48px;
     }
 
-    /* HERO у стилі постера */
+    /* HERO */
     header {
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
       gap: 28px;
       align-items: stretch;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
     }
 
     .hero-left {
@@ -235,7 +235,6 @@
       color: #000;
     }
 
-    /* Правий блок з постером */
     .hero-media {
       position: relative;
       border-radius: 32px;
@@ -281,6 +280,101 @@
       font-size: 14px;
       font-weight: 700;
       text-transform: uppercase;
+    }
+
+    /* ТАЙМЕР -40% */
+    .timer-section {
+      margin-bottom: 32px;
+      background: #fff;
+      border-radius: 26px;
+      border: 2px solid #000;
+      padding: 18px 18px;
+      box-shadow: 6px 6px 0 #00000020;
+    }
+
+    .timer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .timer-text {
+      max-width: 420px;
+    }
+
+    .timer-eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 6px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .timer-title {
+      font-family: "Anton", system-ui;
+      font-size: 24px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+
+    .timer-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .timer-badge-discount {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+    }
+
+    .timer-countdown {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .timer-box {
+      min-width: 64px;
+      padding: 8px 6px;
+      border-radius: 14px;
+      border: 2px solid #000;
+      background: var(--bg-alt);
+      text-align: center;
+      box-shadow: 3px 3px 0 #00000020;
+    }
+
+    .timer-number {
+      font-family: "Anton", system-ui;
+      font-size: 20px;
+      letter-spacing: 0.06em;
+    }
+
+    .timer-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .timer-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      max-width: 260px;
     }
 
     /* Секції */
@@ -476,14 +570,14 @@
       font-weight: 600;
     }
 
-    /* Форма оплати */
+    /* Форма заявки / оплати */
     .payment-section {
       background: #fff;
       border-radius: 26px;
       border: 2px solid #000;
       padding: 22px 20px 24px;
       box-shadow: 6px 6px 0 #00000020;
-      margin-bottom: 36px;
+      margin-bottom: 32px;
     }
 
     .payment-grid {
@@ -562,6 +656,24 @@
       color: #000;
     }
 
+    /* MULTI PAY (Monobank) */
+    .multi-pay-grid {
+      background: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      border: 2px solid #000;
+      box-shadow: 6px 6px 0 #00000020;
+      max-width: 480px;
+      margin-top: 8px;
+    }
+
+    .pay-summary-amount {
+      font-size: 26px;
+      font-weight: 800;
+      margin-top: 4px;
+      color: var(--accent);
+    }
+
     footer {
       font-size: 12px;
       color: var(--text-muted);
@@ -576,114 +688,6 @@
     footer a {
       text-decoration: underline;
       text-decoration-thickness: 0.5px;
-    }
-    /* Блок таймера -40% */
-    .timer-section {
-      margin-bottom: 32px;
-      background: #fff;
-      border-radius: 26px;
-      border: 2px solid #000;
-      padding: 18px 18px;
-      box-shadow: 6px 6px 0 #00000020;
-    }
-
-    .timer-inner {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .timer-text {
-      max-width: 420px;
-    }
-
-    .timer-eyebrow {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 6px;
-      font-weight: 700;
-      color: #000;
-    }
-
-    .timer-title {
-      font-family: "Anton", system-ui;
-      font-size: 24px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-      color: var(--accent);
-    }
-
-    .timer-subtitle {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .timer-badge-discount {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: var(--accent);
-      color: #fff;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 700;
-    }
-
-    .timer-countdown {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .timer-box {
-      min-width: 64px;
-      padding: 8px 6px;
-      border-radius: 14px;
-      border: 2px solid #000;
-      background: var(--bg-alt);
-      text-align: center;
-      box-shadow: 3px 3px 0 #00000020;
-    }
-
-    .timer-number {
-      font-family: "Anton", system-ui;
-      font-size: 20px;
-      letter-spacing: 0.06em;
-    }
-
-    .timer-label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .timer-note {
-      font-size: 11px;
-      color: var(--text-muted);
-      max-width: 260px;
-    }
-
-    @media (max-width: 600px) {
-      .timer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .timer-countdown {
-        width: 100%;
-        justify-content: flex-start;
-      }
-      .timer-box {
-        flex: 1 0 68px;
-      }
     }
 
     /* Адаптив */
@@ -759,6 +763,20 @@
       .payment-section {
         padding: 18px 14px;
       }
+
+      .timer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .timer-countdown {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .timer-box {
+        flex: 1 0 68px;
+      }
     }
   </style>
 </head>
@@ -817,6 +835,7 @@
         </div>
       </div>
     </header>
+
     <!-- ТАЙМЕР -40% ДО 18.11.2025 11:00 -->
     <section class="timer-section" id="early-bird">
       <div class="timer-inner">
@@ -825,7 +844,7 @@
           <div class="timer-title">встигни забронювати</div>
           <p class="timer-subtitle">
             Залишай заявку до <strong>18.11.2025, 11:00</strong> і отримай
-            <strong>знижку 40% на базовий (початковий) курс</strong> онлайн або офлайн.
+            <strong>знижку 40% на будь-який рівень навчання</strong> — Базовий, PRO або EXPERT, онлайн чи офлайн.
           </p>
           <span class="timer-badge-discount">-40% early bird</span>
         </div>
@@ -849,7 +868,7 @@
           </div>
 
           <p class="timer-note" id="cd-note">
-            До завершення спецпропозиції. Знижка -40% діє тільки до 18.11.2025, 11:00.
+            До завершення спецпропозиції. Знижка -40% діє тільки до 18.11.2025, 11:00 на будь-який рівень курсу.
           </p>
         </div>
       </div>
@@ -1051,7 +1070,7 @@
 
       <div class="payment-grid">
         <div>
-          <!-- Підстав свій Formspree endpoint замість YOUR_FORMSPREE_ENDPOINT_HERE -->
+          <!-- TODO: заміни YOUR_FORMSPREE_ENDPOINT_HERE на свій endpoint Formspree для email da32@ukr.net -->
           <form id="courseForm" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT_HERE" method="POST">
             <div>
               <label for="name">Ім’я та прізвище*</label>
@@ -1120,6 +1139,49 @@
       </div>
     </section>
 
+    <!-- МУЛЬТИ ОПЛАТА MONOBANK -->
+    <section class="payment-section" id="multi-pay">
+      <div class="section-header">
+        <div class="section-title">Оплата через Monobank</div>
+        <div class="section-subtitle">
+          Обери рівень та формат — сума та посилання на оплату сформуються автоматично (зі знижкою -40% до 18.11.2025).
+        </div>
+      </div>
+
+      <div class="multi-pay-grid">
+        <div>
+          <label>Обери рівень*</label>
+          <select id="pay-level">
+            <option value="" disabled selected>— Виберіть рівень —</option>
+            <option value="basic">Базовий</option>
+            <option value="pro">PRO</option>
+            <option value="expert">EXPERT</option>
+          </select>
+
+          <label style="margin-top:12px;">Формат*</label>
+          <select id="pay-format">
+            <option value="" disabled selected>— Виберіть формат —</option>
+            <option value="online">Онлайн</option>
+            <option value="offline">Офлайн (Ірпінь)</option>
+          </select>
+
+          <div id="pay-summary" style="display:none; margin-top:20px;">
+            <p style="font-size:14px; margin-bottom:4px;">Сума до оплати:</p>
+            <div class="pay-summary-amount">
+              <span id="pay-amount">0</span> грн
+            </div>
+            <p style="font-size:12px; color:#555; margin-top:6px;">
+              Враховано знижку <strong>-40%</strong> до 18.11.2025.
+            </p>
+          </div>
+
+          <a id="pay-btn" href="#" target="_blank" class="btn-primary" style="display:none; margin-top:16px; width:100%; justify-content:center;">
+            Оплатити
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- ФУТЕР -->
     <footer>
       <div>© <span id="year"></span> Lumière LPG Studio, Ірпінь.</div>
@@ -1136,38 +1198,40 @@
 
     // Відправка форми через fetch + повідомлення "дякуємо..."
     const form = document.getElementById('courseForm');
-    form.addEventListener('submit', async function (event) {
-      event.preventDefault();
+    if (form) {
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
 
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const successBox = document.getElementById('successMessage');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const successBox = document.getElementById('successMessage');
 
-      successBox.style.display = 'none';
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Відправляємо...';
+        successBox.style.display = 'none';
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Відправляємо...';
 
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
 
-        if (response.ok) {
-          form.reset();
-          successBox.style.display = 'block';
-          submitBtn.textContent = 'Надіслано ✔';
-        } else {
-          alert('Помилка відправки. Перевірте дані та спробуйте ще раз.');
+          if (response.ok) {
+            form.reset();
+            successBox.style.display = 'block';
+            submitBtn.textContent = 'Надіслано ✔';
+          } else {
+            alert('Помилка відправки. Перевірте дані та спробуйте ще раз.');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Надіслати заявку на курс';
+          }
+        } catch (error) {
+          alert('Помилка підключення. Перевірте інтернет і спробуйте ще раз.');
           submitBtn.disabled = false;
           submitBtn.textContent = 'Надіслати заявку на курс';
         }
-      } catch (error) {
-        alert('Помилка підключення. Перевірте інтернет і спробуйте ще раз.');
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Надіслати заявку на курс';
-      }
-    });
+      });
+    }
 
     // Таймер до 18.11.2025 11:00 (час Київ, UTC+2)
     (function () {
@@ -1210,7 +1274,60 @@
       const interval = setInterval(updateTimer, 1000);
     })();
 
-    
+    // Ціни до знижки -40% для мультилінку
+    const prices = {
+      basic:   { online: 2190, offline: 4490 },
+      pro:     { online: 2490, offline: 4950 },
+      expert:  { online: 2790, offline: 5490 }
+    };
+
+    // TODO: тут встав свої посилання Monobank для кожної комбінації
+    const monolinks = {
+      basic: {
+        online:  "#PAYLINK_BASIC_ONLINE",   // наприклад https://pay.monobank.ua/...
+        offline: "#PAYLINK_BASIC_OFFLINE"
+      },
+      pro: {
+        online:  "#PAYLINK_PRO_ONLINE",
+        offline: "#PAYLINK_PRO_OFFLINE"
+      },
+      expert: {
+        online:  "#PAYLINK_EXPERT_ONLINE",
+        offline: "#PAYLINK_EXPERT_OFFLINE"
+      }
+    };
+
+    const payLevelEl = document.getElementById("pay-level");
+    const payFormatEl = document.getElementById("pay-format");
+    const paySummary = document.getElementById("pay-summary");
+    const payAmountEl = document.getElementById("pay-amount");
+    const payBtn = document.getElementById("pay-btn");
+
+    function updatePayment() {
+      const level = payLevelEl.value;
+      const format = payFormatEl.value;
+
+      if (!level || !format) {
+        paySummary.style.display = "none";
+        payBtn.style.display = "none";
+        return;
+      }
+
+      const base = prices[level][format];
+      const discount = Math.round(base * 0.6); // -40%
+
+      payAmountEl.textContent = discount;
+      paySummary.style.display = "block";
+
+      payBtn.href = monolinks[level][format];
+      payBtn.textContent = `Оплатити ${discount} грн`;
+      payBtn.style.display = "flex";
+    }
+
+    if (payLevelEl && payFormatEl) {
+      payLevelEl.addEventListener("change", updatePayment);
+      payFormatEl.addEventListener("change", updatePayment);
+    }
   </script>
 </body>
 </html>
