@@ -283,11 +283,6 @@
     }
 
     /* ТАЙМЕР -40% */
-.timer-btn {
-  margin-top: 8px;
-  padding-inline: 18px;
-}
-    
     .timer-section {
       margin-bottom: 32px;
       background: #fff;
@@ -380,6 +375,11 @@
       font-size: 11px;
       color: var(--text-muted);
       max-width: 260px;
+    }
+
+    .timer-btn {
+      margin-top: 8px;
+      padding-inline: 18px;
     }
 
     /* Секції */
@@ -822,7 +822,7 @@
           <a href="https://ig.me/m/lumiere.lpg.studio" target="_blank" class="btn-primary">
             Забронювати місце в Direct
           </a>
-          <button class="btn-ghost" onclick="document.getElementById('payment').scrollIntoView({behavior:'smooth'});">
+          <button class="btn-ghost" type="button" onclick="document.getElementById('payment').scrollIntoView({behavior:'smooth'});">
             Дивитись програму та вартість
           </button>
         </div>
@@ -842,51 +842,50 @@
     </header>
 
     <!-- ТАЙМЕР -40% ДО 18.11.2025 11:00 -->
-<section class="timer-section" id="early-bird">
-  <div class="timer-inner">
-    <div class="timer-text">
-      <div class="timer-eyebrow">акція раннього бронювання</div>
-      <div class="timer-title">встигни забронювати</div>
-      <p class="timer-subtitle">
-        Залишай заявку до <strong>18.11.2025, 11:00</strong> і отримай
-        <strong>знижку 40% на будь-який рівень навчання</strong> — Базовий, PRO або EXPERT, онлайн чи офлайн.
-      </p>
-      <span class="timer-badge-discount">-40% early bird</span>
-    </div>
+    <section class="timer-section" id="early-bird">
+      <div class="timer-inner">
+        <div class="timer-text">
+          <div class="timer-eyebrow">акція раннього бронювання</div>
+          <div class="timer-title">встигни забронювати</div>
+          <p class="timer-subtitle">
+            Залишай заявку до <strong>18.11.2025, 11:00</strong> і отримай
+            <strong>знижку 40% на будь-який рівень навчання</strong> — Базовий, PRO або EXPERT, онлайн чи офлайн.
+          </p>
+          <span class="timer-badge-discount">-40% early bird</span>
+        </div>
 
-    <div class="timer-countdown">
-      <div class="timer-box">
-        <div class="timer-number" id="cd-days">00</div>
-        <div class="timer-label">дні</div>
-      </div>
-      <div class="timer-box">
-        <div class="timer-number" id="cd-hours">00</div>
-        <div class="timer-label">години</div>
-      </div>
-      <div class="timer-box">
-        <div class="timer-number" id="cd-minutes">00</div>
-        <div class="timer-label">хвилини</div>
-      </div>
-      <div class="timer-box">
-        <div class="timer-number" id="cd-seconds">00</div>
-        <div class="timer-label">секунди</div>
-      </div>
+        <div class="timer-countdown">
+          <div class="timer-box">
+            <div class="timer-number" id="cd-days">00</div>
+            <div class="timer-label">дні</div>
+          </div>
+          <div class="timer-box">
+            <div class="timer-number" id="cd-hours">00</div>
+            <div class="timer-label">години</div>
+          </div>
+          <div class="timer-box">
+            <div class="timer-number" id="cd-minutes">00</div>
+            <div class="timer-label">хвилини</div>
+          </div>
+          <div class="timer-box">
+            <div class="timer-number" id="cd-seconds">00</div>
+            <div class="timer-label">секунди</div>
+          </div>
 
-      <p class="timer-note" id="cd-note">
-        До завершення спецпропозиції. Знижка -40% діє тільки до 18.11.2025, 11:00 на будь-який рівень курсу.
-      </p>
+          <p class="timer-note" id="cd-note">
+            До завершення спецпропозиції. Знижка -40% діє тільки до 18.11.2025, 11:00 на будь-який рівень курсу.
+          </p>
 
-      <button
-        class="btn-primary timer-btn"
-        type="button"
-        onclick="document.getElementById('multi-pay').scrollIntoView({behavior:'smooth'});"
-      >
-        Оплатити зі знижкою -40%
-      </button>
-    </div>
-  </div>
-</section>
-
+          <button
+            class="btn-primary timer-btn"
+            type="button"
+            onclick="document.getElementById('multi-pay').scrollIntoView({behavior:'smooth'});"
+          >
+            Оплатити зі знижкою -40%
+          </button>
+        </div>
+      </div>
+    </section>
 
     <!-- ПРО ЩО КУРС -->
     <section class="section" id="about">
@@ -959,7 +958,7 @@
               <a href="https://ig.me/m/lumiere.lpg.studio" target="_blank" class="btn-small">
                 Забронювати Базовий
               </a>
-              <button class="btn-small btn-secondary" onclick="document.getElementById('payment').scrollIntoView({behavior:'smooth'});">
+              <button class="btn-small btn-secondary" type="button" onclick="document.getElementById('payment').scrollIntoView({behavior:'smooth'});">
                 Оплатити через форму
               </button>
             </div>
@@ -993,7 +992,7 @@
               <a href="https://ig.me/m/lumiere.lpg.studio" target="_blank" class="btn-small">
                 Забронювати PRO
               </a>
-              <button class="btn-small btn-secondary" onclick="document.getElementById('payment').scrollIntoView({behavior:'smooth'});">
+              <button class="btn-small btn-secondary" type="button" onclick="document.getElementById('payment').scrollIntoView({behavior:'smooth'});">
                 Оплатити через форму
               </button>
             </div>
@@ -1027,7 +1026,7 @@
               <a href="https://ig.me/m/lumiere.lpg.studio" target="_blank" class="btn-small">
                 Забронювати EXPERT
               </a>
-              <button class="btn-small btn-secondary" onclick="document.getElementById('payment').scrollIntoView({behavior:'smooth'});">
+              <button class="btn-small btn-secondary" type="button" onclick="document.getElementById('payment').scrollIntoView({behavior:'smooth'});">
                 Оплатити через форму
               </button>
             </div>
@@ -1085,7 +1084,7 @@
       <div class="payment-grid">
         <div>
           <!-- TODO: заміни YOUR_FORMSPREE_ENDPOINT_HERE на свій endpoint Formspree для email da32@ukr.net -->
-          <form id="courseForm" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT_HERE" method="POST">
+          <form id="courseForm" action="https://formspree.io/f/meovvzww" method="POST">
             <div>
               <label for="name">Ім’я та прізвище*</label>
               <input type="text" id="name" name="name" required placeholder="Наприклад, Анастасія Ключко">
@@ -1153,12 +1152,12 @@
       </div>
     </section>
 
-    <!-- МУЛЬТИ ОПЛАТА MONOBANK -->
+    <!-- МУЛЬТИ ОПЛАТА КАРТОЮ (MONOBANK) -->
     <section class="payment-section" id="multi-pay">
       <div class="section-header">
-        <div class="section-title">Оплата через Monobank</div>
+        <div class="section-title">Оплата картою</div>
         <div class="section-subtitle">
-          Обери рівень та формат — сума та посилання на оплату сформуються автоматично (зі знижкою -40% до 18.11.2025).
+          Обери рівень та формат — сума та платіжне посилання сформуються автоматично (зі знижкою -40% до 18.11.2025).
         </div>
       </div>
 
@@ -1295,19 +1294,19 @@
       expert:  { online: 2790, offline: 5490 }
     };
 
-    // TODO: тут встав свої посилання Monobank для кожної комбінації
+    // ГОТОВІ монолінки:
     const monolinks = {
       basic: {
-        online:  "#PAYLINK_BASIC_ONLINE",   // наприклад https://pay.monobank.ua/...
-        offline: "#PAYLINK_BASIC_OFFLINE"
+        online:  "https://pay.mbnk.biz/251116CnZf8EXgSRpz5o", // 1314 грн
+        offline: "https://pay.mbnk.biz/2511165HaYFfLaAsxCk9"  // 2694 грн
       },
       pro: {
-        online:  "#PAYLINK_PRO_ONLINE",
-        offline: "#PAYLINK_PRO_OFFLINE"
+        online:  "https://pay.mbnk.biz/25111653RDT5MYzXPiCw", // 1494 грн
+        offline: "https://pay.mbnk.biz/25111627CZRa1vntMgk8"  // 2970 грн
       },
       expert: {
-        online:  "#PAYLINK_EXPERT_ONLINE",
-        offline: "#PAYLINK_EXPERT_OFFLINE"
+        online:  "https://pay.mbnk.biz/251116EPDkhFzJ9DiPPZ", // 1674 грн
+        offline: "https://pay.mbnk.biz/25111631PZhDi29sei8p"  // 3294 грн
       }
     };
 
