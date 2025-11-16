@@ -606,18 +606,50 @@
       .page {
         padding-inline: 12px;
       }
-      .hero-left {
-        padding: 20px 16px;
+
+      header {
+        gap: 18px;
       }
+
+      .hero-left {
+        padding: 18px 14px;
+        border-radius: 24px;
+        box-shadow: 6px 6px 0 #00000015;
+      }
+
+      .hero-title-main {
+        font-size: 30px;
+        line-height: 1;
+      }
+
+      .hero-eyebrow {
+        font-size: 16px;
+      }
+
+      .hero-tags {
+        gap: 6px;
+      }
+
+      .hero-prices {
+        flex-direction: column;
+        gap: 6px;
+        font-size: 13px;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-primary,
+      .btn-ghost {
+        width: 100%;
+        justify-content: center;
+      }
+
       .section,
       .payment-section {
         padding: 18px 14px;
-      }
-      .hero-title-main {
-        font-size: 30px;
-      }
-      .hero-eyebrow {
-        font-size: 16px;
       }
     }
   </style>
@@ -648,10 +680,10 @@
 
         <div class="hero-prices">
           <div class="hero-price-item hero-price-online">
-            <span class="label">онлайн від</span> 25$
+            <span class="label">онлайн від</span> 2190 грн
           </div>
           <div class="hero-price-item hero-price-offline">
-            <span class="label">офлайн від</span> 50$
+            <span class="label">офлайн від</span> 4490 грн
           </div>
         </div>
 
@@ -670,7 +702,6 @@
       </div>
 
       <div class="hero-media">
-        <!-- СЮДИ ПІДСТАВ СВОЄ КРЕО: заміни URL у background в CSS вище -->
         <div class="hero-media-overlay"></div>
         <div class="hero-media-bottom">
           <div class="hero-media-pill">Топ-майстер Анастасія Ключко</div>
@@ -875,12 +906,7 @@
 
       <div class="payment-grid">
         <div>
-          <!--
-            📧 ВАЖЛИВО ДЛЯ ВІДПРАВКИ НА ПОШТУ:
-            1) Зайди на formspree.io, створи форму з email da32@ukr.net.
-            2) Скопіюй свій endpoint виду https://formspree.io/f/xxxxx
-            3) Підстав його замість YOUR_FORMSPREE_ENDPOINT_HERE нижче.
-          -->
+          <!-- Підстав свій Formspree endpoint замість YOUR_FORMSPREE_ENDPOINT_HERE -->
           <form id="courseForm" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT_HERE" method="POST">
             <div>
               <label for="name">Ім’я та прізвище*</label>
