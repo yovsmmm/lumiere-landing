@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Endospheres курс для майстрів | Lumière LPG Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Лаконічний курс Endospheres терапії для майстрів. 3 рівні: Basic, PRO, Expert. Онлайн та офлайн в Ірпені. Оплата картою, сертифікат після навчання.">
+
+  <!-- Шрифт -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f7f5fa;
+      --card: #ffffff;
+      --accent: #ff4fbf;
+      --accent-soft: #ffe5f6;
+      --accent-2: #3b5cff;
+      --text-main: #18111f;
+      --text-muted: #777182;
+      --border: #e1dde8;
+      --success-bg: #e8f7e3;
+      --success-text: #2a6e2a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-soft);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    /* HERO */
+    header.hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .hero-left {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 20px 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 35px rgba(0,0,0,0.03);
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-2);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-size: 26px;
+      line-height: 1.2;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .hero-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+      margin-bottom: 16px;
+      color: var(--text-muted);
+    }
+
+    .hero-info-item {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--bg-soft);
+      border: 1px solid #ece5f4;
+    }
+
+    .hero-info-item strong {
+      font-weight: 600;
+      margin-right: 4px;
+      color: var(--text-main);
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(255,79,191,0.35);
+      transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.1s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+      box-shadow: 0 12px 28px rgba(255,79,191,0.4);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+      box-shadow: 0 8px 18px rgba(255,79,191,0.32);
+    }
+
+    .btn-ghost {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid #d2c9e3;
+      background: #fff;
+      font-size: 11px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .hero-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .hero-note strong {
+      color: var(--accent-2);
+    }
+
+    .hero-right {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #eae6f5;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.06);
+    }
+
+    .hero-right img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* Заголовки секцій */
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section-header {
+      margin-bottom: 14px;
+      text-align: left;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-2);
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      margin-bottom: 3px;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* 3 блоки: для кого, що буде, формат */
+    .tripple-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .tripple-card {
+      background: var(--card);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 14px 12px;
+      font-size: 13px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.02);
+    }
+
+    .tripple-title {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .tripple-text {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .tripple-list {
+      font-size: 12px;
+      color: var(--text-muted);
+      list-style: none;
+      margin-top: 4px;
+    }
+
+    .tripple-list li {
+      margin-bottom: 3px;
+    }
+
+    .tripple-list li::before {
+      content: "• ";
+      color: var(--accent);
+    }
+
+    /* Блок фото тренера + студії */
+    .visual-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .visual-card {
+      background: var(--card);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 14px 14px 16px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.02);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .visual-image {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #ece4f3;
+      background: #eee8fa;
+    }
+
+    .visual-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .visual-caption-title {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .visual-caption-text {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Оплата картою */
+    .payment-section {
+      margin-bottom: 26px;
+      background: var(--card);
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      padding: 18px 16px 20px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.03);
+    }
+
+    .pay-grid {
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 3px;
+      font-weight: 600;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    select, input, textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #fbf9ff;
+      color: var(--text-main);
+      font-size: 13px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    }
+
+    select:focus, input:focus, textarea:focus {
+      border-color: var(--accent);
+      background: #fff;
+      box-shadow: 0 0 0 1px #ff4fbf22;
+    }
+
+    .pay-summary-amount {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .note-small {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Форма заявки */
+    .form-section {
+      margin-bottom: 26px;
+      background: var(--card);
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      padding: 18px 16px 20px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.03);
+    }
+
+    .form-grid {
+      max-width: 460px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    #successMessage {
+      display: none;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: var(--success-bg);
+      color: var(--success-text);
+      font-size: 12px;
+      margin-bottom: 6px;
+      border: 1px solid #b9e6b2;
+    }
+
+    textarea {
+      min-height: 70px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 12px;
+      border-top: 1px solid #e0d9ec;
+      margin-top: 4px;
+    }
+
+    footer a {
+      text-decoration: underline;
+      text-decoration-thickness: 0.5px;
+    }
+
+    /* Адаптив */
+    @media (max-width: 900px) {
+      header.hero {
+        grid-template-columns: 1fr;
+      }
+      .visual-grid {
+        grid-template-columns: 1fr;
+      }
+      .tripple-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding-inline: 12px;
+      }
+      .hero-left {
+        padding: 18px 14px;
+      }
+      .hero-title {
+        font-size: 22px;
+      }
+      .hero-cta {
+        flex-direction: column;
+      }
+      .btn-primary,
+      .btn-ghost {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HERO -->
+    <header class="hero" id="top">
+      <div class="hero-left">
+        <div class="hero-label">курс endospheres</div>
+        <div class="hero-eyebrow">lumière lpg studio · ірпінь</div>
+        <h1 class="hero-title">
+          Курс <span>Endospheres</span> для майстрів: тіло + обличчя
+        </h1>
+        <p class="hero-subtitle">
+          3 рівні: Basic, PRO та Expert. Онлайн та офлайн в Ірпені. Практика, протоколи й сертифікат за 1–3 дні навчання.
+        </p>
+
+        <div class="hero-info">
+          <div class="hero-info-item">
+            <strong>18 листопада</strong> старт потоку
+          </div>
+          <div class="hero-info-item">
+            <strong>Ірпінь</strong> офлайн + онлайн підключення
+          </div>
+          <div class="hero-info-item">
+            <strong>-40%</strong> для раннього бронювання
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <button class="btn-primary" type="button" onclick="document.getElementById('multi-pay').scrollIntoView({behavior:'smooth'});">
+            Оплатити картою
+          </button>
+          <a href="https://ig.me/m/lumiere.lpg.studio" target="_blank" class="btn-ghost">
+            Написати в Direct
+          </a>
+        </div>
+
+        <p class="hero-note">
+          <strong>Знижка -40%</strong> вже закладена в оплату картою. Після оплати ми зв'яжемось напротязі 1 години.
+        </p>
+      </div>
+
+      <div class="hero-right">
+        <!-- Підстав своє основне крео/банер курсу -->
+        <img src="img/endospheres-hero-light.jpg" alt="Endospheres курс Lumière LPG Studio">
+      </div>
+    </header>
+
+    <!-- 3 ЛАКОНІЧНІ БЛОКИ -->
+    <section class="section" id="short-blocks">
+      <div class="tripple-grid">
+        <div class="tripple-card">
+          <div class="tripple-title">Для кого</div>
+          <div class="tripple-text">
+            Для майстрів масажу, власників студій та новачків, які хочуть додати Endospheres у свої послуги.
+          </div>
+          <ul class="tripple-list">
+            <li>Майстри масажу й апаратної естетики</li>
+            <li>Студії краси та SPA</li>
+            <li>Ті, хто тільки заходить у бʼюті</li>
+          </ul>
+        </div>
+
+        <div class="tripple-card">
+          <div class="tripple-title">Що буде</div>
+          <ul class="tripple-list">
+            <li>Протоколи тіла та обличчя</li>
+            <li>Як уникати синців та набряків</li>
+            <li>Поєднання з LPG, пресотерапією, ручним масажем</li>
+            <li>Як продавати курсами, а не разово</li>
+          </ul>
+        </div>
+
+        <div class="tripple-card">
+          <div class="tripple-title">Формат</div>
+          <ul class="tripple-list">
+            <li>Офлайн в студії Lumière, Ірпінь</li>
+            <li>Онлайн-участь із записом</li>
+            <li>3 рівні: Basic, PRO, Expert</li>
+            <li>Сертифікат після кожного рівня</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ТРЕНЕР + ФОТО СТУДІЇ -->
+    <section class="section" id="visual">
+      <div class="section-header">
+        <div class="section-eyebrow">живий досвід</div>
+        <h2 class="section-title">Тренер і студія Lumière</h2>
+        <p class="section-subtitle">
+          Навчання проходить у діючій студії естетичної корекції тіла та обличчя в Ірпені, а не “на папері”.
+        </p>
+      </div>
+
+      <div class="visual-grid">
+        <div class="visual-card">
+          <div class="visual-image">
+            <!-- Фото тренера -->
+            <img src="img/trainer-anastasia.jpg" alt="Тренер курсу Endospheres">
+          </div>
+          <div>
+            <div class="visual-caption-title">Анастасія Ключко</div>
+            <div class="visual-caption-text">
+              Топ-майстер та співвласниця Lumière LPG Studio. Живі протоколи Endospheres, які щодня відпрацьовуються на клієнтах студії.
+            </div>
+          </div>
+        </div>
+
+        <div class="visual-card">
+          <div class="visual-image">
+            <!-- Фото студії -->
+            <img src="img/studio-lumiere-1.jpg" alt="Студія Lumière LPG Studio в Ірпені">
+          </div>
+          <div>
+            <div class="visual-caption-title">Студія Lumière в Ірпені</div>
+            <div class="visual-caption-text">
+              Затишний кабінет із Endospheres, LPG та пресотерапією. Тут проходить офлайн-частина навчання — з практикою на моделях та поглядом “зсередини”, як працює студія.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ОПЛАТА КАРТОЮ -->
+    <section class="payment-section" id="multi-pay">
+      <div class="section-header">
+        <div class="section-eyebrow">оплата</div>
+        <h2 class="section-title">Оплата картою</h2>
+        <p class="section-subtitle">
+          Обери свій рівень і формат — сума зі знижкою -40% та Monobank-лінк сформуються автоматично.
+        </p>
+      </div>
+
+      <div class="pay-grid">
+        <div>
+          <label for="pay-level">Рівень</label>
+          <select id="pay-level">
+            <option value="" disabled selected>— Оберіть рівень —</option>
+            <option value="basic">Basic</option>
+            <option value="pro">PRO</option>
+            <option value="expert">EXPERT</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="pay-format">Формат</label>
+          <select id="pay-format">
+            <option value="" disabled selected>— Оберіть формат —</option>
+            <option value="online">Онлайн</option>
+            <option value="offline">Офлайн (Ірпінь)</option>
+          </select>
+        </div>
+
+        <div id="pay-summary" style="display:none; margin-top:6px;">
+          <p style="font-size:12px; margin-bottom:2px;">Сума до оплати:</p>
+          <div class="pay-summary-amount">
+            <span id="pay-amount">0</span> грн
+          </div>
+          <p class="note-small">
+            Знижка <strong>-40%</strong> вже врахована. Після оплати ми зв'яжемось напротязі 1 години.
+          </p>
+        </div>
+
+        <a id="pay-btn" href="#" target="_blank" class="btn-primary" style="display:none; margin-top:10px; width:100%; justify-content:center;">
+          Оплатити
+        </a>
+      </div>
+    </section>
+
+    <!-- ФОРМА ЗАЯВКИ -->
+    <section class="form-section" id="request">
+      <div class="section-header">
+        <div class="section-eyebrow">залишити заявку</div>
+        <h2 class="section-title">Хочеш обговорити деталі?</h2>
+        <p class="section-subtitle">
+          Залиш контакти — надішлемо коротку програму, підкажемо по рівнях та допоможемо обрати формат.
+        </p>
+      </div>
+
+      <div class="form-grid">
+        <!-- TODO: заміни YOUR_FORMSPREE_ENDPOINT_HERE на свій endpoint Formspree для email da32@ukr.net -->
+        <form id="courseForm" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT_HERE" method="POST">
+          <div id="successMessage">
+            Дякуємо, ми з вами зв'яжемось напротязі 1 години.
+          </div>
+
+          <div>
+            <label for="name">Імʼя та прізвище</label>
+            <input type="text" id="name" name="name" required placeholder="Наприклад, Анастасія Ключко">
+          </div>
+
+          <div>
+            <label for="phone">Телефон / Telegram / Viber</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+38 (0__) ___ __ __">
+          </div>
+
+          <div class="form-row">
+            <div style="flex:1 1 160px;">
+              <label for="level">Рівень</label>
+              <select id="level" name="level">
+                <option value="" disabled selected>Ще думаю</option>
+                <option value="Базовий">Basic</option>
+                <option value="PRO">PRO</option>
+                <option value="EXPERT">EXPERT</option>
+                <option value="Усі три">Усі три рівні</option>
+              </select>
+            </div>
+            <div style="flex:1 1 160px;">
+              <label for="format">Формат</label>
+              <select id="format" name="format">
+                <option value="" disabled selected>Неважливо</option>
+                <option value="Офлайн Ірпінь">Офлайн (Ірпінь)</option>
+                <option value="Онлайн">Онлайн</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="comment">Коментар</label>
+            <textarea id="comment" name="comment" placeholder="Напишіть свої питання або зручний час для звʼязку."></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width:100%; justify-content:center; margin-top:4px;">
+            Надіслати заявку
+          </button>
+          <p class="note-small">
+            Натискаючи кнопку, ви погоджуєтесь на обробку персональних даних з метою зв'язку та організації навчання.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ФУТЕР -->
+    <footer>
+      <div>© <span id="year"></span> Lumière LPG Studio, Ірпінь. Endospheres · LPG · пресотерапія.</div>
+      <div>
+        Instagram: <a href="https://www.instagram.com/lumiere.lpg.studio" target="_blank">@lumiere.lpg.studio</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Поточний рік у футері
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Відправка форми через fetch + повідомлення
+    const form = document.getElementById('courseForm');
+    if (form) {
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const successBox = document.getElementById('successMessage');
+
+        successBox.style.display = 'none';
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Відправляємо...';
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            form.reset();
+            successBox.style.display = 'block';
+            submitBtn.textContent = 'Надіслано ✔';
+          } else {
+            alert('Помилка відправки. Перевірте дані та спробуйте ще раз.');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Надіслати заявку';
+          }
+        } catch (error) {
+          alert('Помилка підключення. Перевірте інтернет і спробуйте ще раз.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Надіслати заявку';
+        }
+      });
+    }
+
+    // Базові ціни (до знижки -40%)
+    const prices = {
+      basic:   { online: 2190, offline: 4490 },
+      pro:     { online: 2490, offline: 4950 },
+      expert:  { online: 2790, offline: 5490 }
+    };
+
+    // Монолінки з урахуванням -40%
+    const monolinks = {
+      basic: {
+        online:  "https://pay.mbnk.biz/251116CnZf8EXgSRpz5o", // 1314 грн
+        offline: "https://pay.mbnk.biz/2511165HaYFfLaAsxCk9"  // 2694 грн
+      },
+      pro: {
+        online:  "https://pay.mbnk.biz/25111653RDT5MYzXPiCw", // 1494 грн
+        offline: "https://pay.mbnk.biz/25111627CZRa1vntMgk8"  // 2970 грн
+      },
+      expert: {
+        online:  "https://pay.mbnk.biz/251116EPDkhFzJ9DiPPZ", // 1674 грн
+        offline: "https://pay.mbnk.biz/25111631PZhDi29sei8p"  // 3294 грн
+      }
+    };
+
+    const payLevelEl = document.getElementById("pay-level");
+    const payFormatEl = document.getElementById("pay-format");
+    const paySummary = document.getElementById("pay-summary");
+    const payAmountEl = document.getElementById("pay-amount");
+    const payBtn = document.getElementById("pay-btn");
+
+    function updatePayment() {
+      const level = payLevelEl.value;
+      const format = payFormatEl.value;
+
+      if (!level || !format) {
+        paySummary.style.display = "none";
+        payBtn.style.display = "none";
+        return;
+      }
+
+      const base = prices[level][format];
+      const discount = Math.round(base * 0.6); // -40%
+
+      payAmountEl.textContent = discount;
+      paySummary.style.display = "block";
+
+      payBtn.href = monolinks[level][format];
+      payBtn.textContent = `Оплатити ${discount} грн`;
+      payBtn.style.display = "flex";
+    }
+
+    if (payLevelEl && payFormatEl) {
+      payLevelEl.addEventListener("change", updatePayment);
+      payFormatEl.addEventListener("change", updatePayment);
+    }
+  </script>
+</body>
+</html>
