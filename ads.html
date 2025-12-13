@@ -172,10 +172,9 @@
       </button>
 
       <!-- BookOn -->
-      <button class="btn light"
-        onclick="trackAndGo('BookOn Online','bookon_open',false)">
-        <span class="left"><span class="icon">🗓️</span>Онлайн запис</span><span>→</span>
-      </button>
+      <button class="btn light" onclick="openBookon()">
+  <span class="left"><span class="icon">🗓️</span>Онлайн запис</span><span>→</span>
+</button>
 
       <!-- Google Maps -->
       <button class="btn light"
@@ -197,17 +196,37 @@
   </div>
 </div>
 
-<script>
-  // виклик BookOn
-  function bookon_open(){
+  <script>
+  function openBookon(){
+    // аналітика кліку
     try{
       gtag('event','bookon_open',{event_category:'bio_link'});
     }catch(e){}
-    if(window.bocrmWidget){
-      window.bocrmWidget.open();
+
+    // спроба відкрити віджет різними способами (бо назва API може відрізнятися)
+    const w = window;
+
+    if (w.bocrmWidget && typeof w.bocrmWidget.open === "function") {
+      w.bocrmWidget.open();
+      return;
     }
+
+    if (w.BOCRM && typeof w.BOCRM.open === "function") {
+      w.BOCRM.open();
+      return;
+    }
+
+    if (w.BinotelWidget && typeof w.BinotelWidget.open === "function") {
+      w.BinotelWidget.open();
+      return;
+    }
+
+    // fallback: якщо API не знайдено — покажемо підказку
+    alert("Віджет ще не завантажився. Спробуй ще раз через 1–2 секунди.");
   }
 </script>
 
+
+  
 </body>
 </html>
