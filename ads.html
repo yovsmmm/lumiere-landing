@@ -3,233 +3,211 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LUMIÈRE — Перехідник</title>
-  <meta name="description" content="Швидкі переходи: Instagram, Онлайн запис, Google Maps, Телефон" />
+  <title>LUMIÈRE — Онлайн запис</title>
+  <meta name="description" content="LUMIÈRE LPG & LASER STUDIO — онлайн запис, Instagram, контакти" />
 
-  <!-- ====== Google Analytics 4 (GA4) ======
-       1) Створи GA4 властивість
-       2) Візьми Measurement ID виду G-XXXXXXXXXX
-       3) Встав нижче замість G-XXXXXXXXXX
-  -->
+  <!-- ===== Google Analytics 4 ===== -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
 
-    // трекінг кліків (щоб було видно у GA4: Events)
-    function trackAndGo(eventName, url, openInNewTab = false) {
-      try {
-        gtag('event', 'button_click', {
-          event_category: 'bio_link',
-          event_label: eventName,
-          link_url: url
+    function trackAndGo(eventName, url, newTab = false){
+      try{
+        gtag('event','button_click',{
+          event_category:'bio_link',
+          event_label:eventName,
+          link_url:url
         });
-      } catch (e) {}
-
-      // щоб подія встигла відправитись
-      setTimeout(() => {
-        if (openInNewTab) window.open(url, '_blank', 'noopener');
-        else window.location.href = url;
-      }, 180);
+      }catch(e){}
+      setTimeout(()=>{
+        newTab ? window.open(url,'_blank','noopener') : location.href = url;
+      },150);
     }
+  </script>
+
+  <!-- ===== BookOn widget ===== -->
+  <script type="text/javascript">
+    (function(d, w, s) {
+      var widgetHash = '7usW1Fj1cKZ2skmHOfvn',
+      bow = d.createElement(s);
+      bow.type = "text/javascript";
+      bow.async = true;
+      bow.src = '//widgets.binotel.com/b/bocrm/widgets/' + widgetHash + '.xjs';
+      var sn = d.getElementsByTagName(s)[0];
+      sn.parentNode.insertBefore(bow, sn);
+    })(document, window, 'script');
   </script>
 
   <style>
     :root{
       --bg1:#fbf5ee;
-      --bg2:#f2e7da;
+      --bg2:#f1e6d8;
       --card:#ffffffcc;
       --text:#1f1b16;
       --muted:#6b5f55;
-      --btn:#1f1b16;
-      --btnText:#fff;
-      --btnAlt:#ffffff;
-      --btnAltText:#1f1b16;
-      --shadow: 0 18px 60px rgba(0,0,0,.12);
-      --radius: 22px;
+      --dark:#1f1b16;
+      --radius:22px;
+      --shadow:0 18px 60px rgba(0,0,0,.12);
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue";
-      color:var(--text);
       min-height:100vh;
-      background: radial-gradient(1200px 800px at 30% 10%, var(--bg1), transparent 60%),
-                  radial-gradient(1100px 700px at 70% 90%, var(--bg2), transparent 55%),
-                  linear-gradient(180deg, #fff, var(--bg1));
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(1200px 800px at 20% 10%, var(--bg1), transparent 60%),
+        radial-gradient(1000px 700px at 80% 90%, var(--bg2), transparent 55%),
+        linear-gradient(180deg,#fff,var(--bg1));
       display:flex;
-      align-items:center;
       justify-content:center;
+      align-items:center;
       padding:24px;
+      color:var(--text);
     }
-    .wrap{
-      width:100%;
-      max-width:460px;
-    }
+    .wrap{width:100%;max-width:460px}
     .card{
       background:var(--card);
-      backdrop-filter: blur(10px);
-      border:1px solid rgba(0,0,0,.06);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
+      backdrop-filter:blur(10px);
+      border-radius:var(--radius);
       padding:26px 22px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(0,0,0,.06);
     }
     .top{
       display:flex;
       flex-direction:column;
       align-items:center;
       text-align:center;
-      gap:10px;
-      margin-bottom:18px;
+      gap:12px;
     }
     .logo{
-      width:72px;height:72px;
-      border-radius:18px;
-      background: #fff;
+      width:86px;
+      height:86px;
+      border-radius:20px;
+      background:#fff;
       border:1px solid rgba(0,0,0,.08);
-      display:grid;
-      place-items:center;
-      font-weight:700;
-      letter-spacing:.08em;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+    .logo img{
+      width:80%;
+      height:auto;
     }
     h1{
-      margin:6px 0 0;
+      margin:4px 0 0;
+      letter-spacing:.12em;
       font-size:22px;
-      letter-spacing:.08em;
     }
     .sub{
       margin:0;
       color:var(--muted);
       font-size:14px;
-      line-height:1.35;
+      line-height:1.4;
     }
     .btns{
+      margin-top:20px;
       display:flex;
       flex-direction:column;
       gap:12px;
-      margin-top:18px;
     }
     .btn{
-      width:100%;
       border:none;
       border-radius:18px;
       padding:14px 16px;
       font-size:16px;
-      font-weight:650;
+      font-weight:600;
       cursor:pointer;
       display:flex;
-      align-items:center;
       justify-content:space-between;
-      gap:12px;
-      transition: transform .08s ease, box-shadow .18s ease, opacity .18s ease;
-      box-shadow: 0 10px 24px rgba(0,0,0,.10);
+      align-items:center;
+      box-shadow:0 10px 24px rgba(0,0,0,.12);
+      transition:.15s;
     }
-    .btn:active{ transform: scale(.99); opacity:.92; }
-    .btn.dark{ background:var(--btn); color:var(--btnText); }
-    .btn.light{ background:var(--btnAlt); color:var(--btnAltText); border:1px solid rgba(0,0,0,.10); box-shadow:none; }
-    .left{
-      display:flex; align-items:center; gap:10px;
-    }
+    .btn:active{transform:scale(.98)}
+    .dark{background:var(--dark);color:#fff}
+    .light{background:#fff;color:var(--dark)}
+    .left{display:flex;align-items:center;gap:10px}
     .icon{
-      width:34px; height:34px;
+      width:34px;height:34px;
       border-radius:12px;
-      display:grid; place-items:center;
-      border:1px solid rgba(0,0,0,.10);
-      background: rgba(255,255,255,.75);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(0,0,0,.1);
       font-size:16px;
     }
-    .btn.dark .icon{ background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.18); }
-    .arrow{ opacity:.85; font-weight:700; }
     .footer{
-      margin-top:14px;
-      color:var(--muted);
-      font-size:12px;
+      margin-top:16px;
       text-align:center;
-      line-height:1.4;
+      font-size:12px;
+      color:var(--muted);
     }
-    .footer a{ color:inherit; text-decoration:underline; }
   </style>
 </head>
 
 <body>
-  <main class="wrap">
-    <section class="card">
-      <div class="top">
-        <!-- Можеш замінити на картинку-лого (img) -->
-        <div class="logo">L</div>
-        <div>
-          <h1>LUMIÈRE</h1>
-          <p class="sub">LPG & LASER STUDIO<br/>Швидкі переходи</p>
-        </div>
+<div class="wrap">
+  <div class="card">
+
+    <div class="top">
+      <!-- 🔽 ЛОГО -->
+      <div class="logo">
+        <img src="b479c408-d794-4400-94c2-7954892c2725.jpe" alt="LUMIÈRE logo">
       </div>
 
-      <div class="btns">
-        <!-- 1) Instagram -->
-        <button class="btn dark"
-          onclick="trackAndGo('Instagram', INSTAGRAM_URL, true)">
-          <span class="left">
-            <span class="icon">📷</span>
-            <span>Instagram</span>
-          </span>
-          <span class="arrow">→</span>
-        </button>
+      <h1>LUMIÈRE</h1>
+      <p class="sub">LPG & LASER STUDIO<br>Онлайн запис та контакти</p>
+    </div>
 
-        <!-- 2) Онлайн Запис -->
-        <button class="btn light"
-          onclick="trackAndGo('Online Booking', BOOKING_URL, true)">
-          <span class="left">
-            <span class="icon">🗓️</span>
-            <span>Онлайн запис</span>
-          </span>
-          <span class="arrow">→</span>
-        </button>
+    <div class="btns">
+      <!-- Instagram -->
+      <button class="btn dark"
+        onclick="trackAndGo('Instagram','https://instagram.com/lumiere.lpg.studio',true)">
+        <span class="left"><span class="icon">📷</span>Instagram</span><span>→</span>
+      </button>
 
-        <!-- 3) Google Maps -->
-        <button class="btn light"
-          onclick="trackAndGo('Google Maps', MAPS_URL, true)">
-          <span class="left">
-            <span class="icon">📍</span>
-            <span>Google Maps</span>
-          </span>
-          <span class="arrow">→</span>
-        </button>
+      <!-- BookOn -->
+      <button class="btn light"
+        onclick="trackAndGo('BookOn Online','bookon_open',false)">
+        <span class="left"><span class="icon">🗓️</span>Онлайн запис</span><span>→</span>
+      </button>
 
-        <!-- 4) Телефон -->
-        <button class="btn dark"
-          onclick="trackAndGo('Phone Call', 'tel:' + PHONE_NUMBER, false)">
-          <span class="left">
-            <span class="icon">📞</span>
-            <span id="phoneLabel">Подзвонити</span>
-          </span>
-          <span class="arrow">→</span>
-        </button>
-      </div>
+      <!-- Google Maps -->
+      <button class="btn light"
+        onclick="trackAndGo('Google Maps','https://maps.app.goo.gl/aNwitfam98qukxBD6',true)">
+        <span class="left"><span class="icon">📍</span>Google Maps</span><span>→</span>
+      </button>
 
-      <div class="footer">
-        © LUMIÈRE • <span id="phoneText"></span><br/>
-        <a href="#" onclick="trackAndGo('Open Landing Example', 'https://yovsmmm.github.io/lumiere-landing/lumiere_lpg_landing.html', true); return false;">Приклад стилю</a>
-      </div>
-    </section>
-  </main>
+      <!-- Phone -->
+      <button class="btn dark"
+        onclick="trackAndGo('Phone Call','tel:+380679663926',false)">
+        <span class="left"><span class="icon">📞</span>+38 067 966 39 26</span><span>→</span>
+      </button>
+    </div>
 
-  <script>
-    // ======= ВСТАВ СВОЇ ДАНІ ТУТ =======
-    const INSTAGRAM_URL = "https://instagram.com/lumiere.lpg.studio";
-    const BOOKING_URL   = "https://example.com/online-booking"; // заміни на твій онлайн запис (Bookon/сайт/telegram)
-    const MAPS_URL      = "https://maps.google.com/?q=Lumiere+LPG+Studio"; // краще встав прямий лінк на твою точку
-    const PHONE_NUMBER  = "0679663926"; // тільки цифри або +380...
+    <div class="footer">
+      © LUMIÈRE • Irpin / Bucha
+    </div>
 
-    // Відображення телефону внизу (красиво)
-    function formatUA(num){
-      // примітивне форматування під UA, можна прибрати
-      if(num.startsWith("+")) return num;
-      if(num.length === 10) return num.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, "$1 $2 $3 $4");
-      return num;
+  </div>
+</div>
+
+<script>
+  // виклик BookOn
+  function bookon_open(){
+    try{
+      gtag('event','bookon_open',{event_category:'bio_link'});
+    }catch(e){}
+    if(window.bocrmWidget){
+      window.bocrmWidget.open();
     }
-    document.getElementById("phoneText").textContent = formatUA(PHONE_NUMBER);
-    document.getElementById("phoneLabel").textContent = "Подзвонити: " + formatUA(PHONE_NUMBER);
-  </script>
+  }
+</script>
+
 </body>
 </html>
