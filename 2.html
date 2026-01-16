@@ -25,25 +25,33 @@
     .section p{text-align:center;color:#a7a7ba;font-size:13px;max-width:520px;margin:0 auto 24px}
 
 details.card summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   cursor: pointer;
   list-style: none;
-  font-size: 14px;
-  font-weight: 600;
 }
 
 details.card summary::-webkit-details-marker {
   display: none;
 }
 
-details.card[open] summary {
-  margin-bottom: 10px;
+.faq-icon {
+  font-size: 26px;
+  font-weight: 300;
+  transition: transform 0.3s ease;
 }
 
-details.card p {
-  color: #a7a7ba;
-  font-size: 13px;
-  margin: 0;
+details[open] .faq-icon {
+  transform: rotate(45deg); /* + стає × */
 }
+
+.faq-answer {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #a7a7ba;
+}
+
 
     
     .grid{display:grid;gap:20px}
@@ -149,32 +157,61 @@ details.card p {
   <p>Відповіді на найпоширеніші запитання перед покупкою курсу</p>
 
   <div class="grid">
+
+    <!-- FAQ ITEM -->
     <details class="card">
-      <summary>Цей курс підійде новачкам?</summary>
-      <p>Так. Курс побудований від базових принципів до практичної роботи, тому підходить навіть якщо ви раніше не працювали з Endospheres.</p>
+      <summary>
+        <span class="faq-question">Цей курс підійде новачкам?</span>
+        <span class="faq-icon">+</span>
+      </summary>
+      <p class="faq-answer">
+        Так. Курс побудований від базових принципів до практичної роботи, тому підходить навіть якщо ви раніше не працювали з Endospheres.
+      </p>
     </details>
 
     <details class="card">
-      <summary>Коли я отримаю доступ до навчання?</summary>
-      <p>Доступ надається автоматично одразу після успішної оплати. Ви зможете почати навчання в той самий день.</p>
+      <summary>
+        <span class="faq-question">Коли я отримаю доступ до навчання?</span>
+        <span class="faq-icon">+</span>
+      </summary>
+      <p class="faq-answer">
+        Доступ надається автоматично одразу після успішної оплати. Ви зможете почати навчання в той самий день.
+      </p>
     </details>
 
     <details class="card">
-      <summary>Чи буде сертифікат після курсу?</summary>
-      <p>Онлайн-курс не передбачає державний сертифікат, але ви отримуєте повноцінні знання та робочі протоколи.</p>
+      <summary>
+        <span class="faq-question">Чи буде сертифікат після курсу?</span>
+        <span class="faq-icon">+</span>
+      </summary>
+      <p class="faq-answer">
+        Онлайн-курс не передбачає державний сертифікат, але ви отримуєте повноцінні знання та робочі протоколи.
+      </p>
     </details>
 
     <details class="card">
-      <summary>Чи можна проходити курс з телефону?</summary>
-      <p>Так. Уроки адаптовані під смартфон, планшет та компʼютер.</p>
+      <summary>
+        <span class="faq-question">Чи можна проходити курс з телефону?</span>
+        <span class="faq-icon">+</span>
+      </summary>
+      <p class="faq-answer">
+        Так. Уроки адаптовані під смартфон, планшет та компʼютер.
+      </p>
     </details>
 
     <details class="card">
-      <summary>Чи є підтримка під час навчання?</summary>
-      <p>У пакетах Standard та VIP передбачена підтримка в закритому Telegram-чаті.</p>
+      <summary>
+        <span class="faq-question">Чи є підтримка під час навчання?</span>
+        <span class="faq-icon">+</span>
+      </summary>
+      <p class="faq-answer">
+        У пакетах Standard та VIP передбачена підтримка в закритому Telegram-чаті.
+      </p>
     </details>
+
   </div>
 </section>
+
 
   
   <footer>
