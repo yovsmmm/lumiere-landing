@@ -858,6 +858,57 @@
         grid-template-columns: repeat(2, minmax(0,1fr));
       }
     }
+/* ===== PROMO TIMER ===== */
+
+.promo-timer {
+  margin: 18px auto 8px;
+  padding: 14px 16px;
+  max-width: 420px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #111, #1a1a1a);
+  border: 1px solid #ffffff22;
+  text-align: center;
+}
+
+.promo-timer-title {
+  font-size: 13px;
+  color: #ffffffaa;
+  margin-bottom: 6px;
+}
+
+.promo-timer-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.promo-timer-time span {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+}
+
+.promo-timer-time b {
+  font-size: 24px;
+}
+
+.promo-timer-time small {
+  font-size: 11px;
+  color: #ffffff88;
+}
+
+/* мобільний */
+@media (max-width: 768px) {
+  .promo-timer {
+    margin-top: 14px;
+  }
+}
+
+    
   </style>
 </head>
 <body>
@@ -1198,6 +1249,18 @@
     <!-- ОПЛАТА КАРТОЮ (MONOBANK) -->
     <section class="payment-section" id="multi-pay">
       <div class="section-header">
+        <!-- ТАЙМЕР АКЦІЇ -->
+<div class="promo-timer">
+  <div class="promo-timer-title">Акційна ціна діє ще:</div>
+  <div class="promo-timer-time" id="promoTimer">
+    <span><b id="t-hours">24</b><small>год</small></span>
+    <span>:</span>
+    <span><b id="t-minutes">00</b><small>хв</small></span>
+    <span>:</span>
+    <span><b id="t-seconds">00</b><small>сек</small></span>
+  </div>
+</div>
+
         <div class="section-eyebrow">оплата</div>
         <h2 class="section-title">Оплата картою</h2>
         <p class="section-subtitle">
@@ -1451,6 +1514,43 @@
   document.querySelector('.reviews-arrow.right')?.addEventListener('click', () => {
     slider.scrollBy({ left: slider.offsetWidth, behavior: 'smooth' });
   });
+</script>
+<script>
+  const PROMO_HOURS = 24;
+  const promoKey = 'promoEndTime';
+
+  function startPromoTimer() {
+    let endTime = localStorage.getItem(promoKey);
+
+    if (!endTime) {
+      endTime = Date.now() + PROMO_HOURS * 60 * 60 * 1000;
+      localStorage.setItem(promoKey, endTime);
+    }
+
+    function updateTimer() {
+      const now = Date.now();
+      const diff = endTime - now;
+
+      if (diff <= 0) {
+        document.getElementById('promoTimer').innerHTML =
+          '<span style="font-size:14px;color:#ff6b6b;">Акція завершена</span>';
+        return;
+      }
+
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('t-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('t-minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('t-seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  }
+
+  startPromoTimer();
 </script>
 
   
