@@ -908,7 +908,87 @@
   }
 }
 
-    
+    /* ===== FOOTER ===== */
+
+.site-footer {
+  margin-top: 60px;
+  padding: 32px 16px 18px;
+  background: linear-gradient(180deg, #0e0e0e, #090909);
+  border-top: 1px solid #ffffff14;
+  color: #ffffffcc;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 28px;
+}
+
+.footer-logo {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.footer-desc {
+  font-size: 13px;
+  color: #ffffff88;
+  line-height: 1.5;
+}
+
+.footer-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #ffffffcc;
+}
+
+.footer-nav a,
+.footer-contacts a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #ffffffaa;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-nav a:hover,
+.footer-contacts a:hover {
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.footer-contacts svg {
+  color: #ffffff88;
+}
+
+.footer-bottom {
+  margin-top: 22px;
+  padding-top: 12px;
+  border-top: 1px solid #ffffff14;
+  text-align: center;
+  font-size: 12px;
+  color: #ffffff66;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-nav a,
+  .footer-contacts a {
+    justify-content: center;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -1264,7 +1344,7 @@
         <div class="section-eyebrow">оплата</div>
         <h2 class="section-title">Оплата картою</h2>
         <p class="section-subtitle">
-          Обери рівень та формат — сума зі знижкою -40% та платіжне посилання надійного Monobank-еквайрингу підтягнуться автоматично.
+          Обери рівень та формат — сума зі знижкою <b>-30%</b> та платіжне посилання надійного Monobank-еквайрингу підтягнуться автоматично.
         </p>
       </div>
 
@@ -1293,7 +1373,7 @@
               <span id="pay-amount">0</span> грн
             </div>
             <p class="note-small">
-              Знижка <strong>-40%</strong> вже врахована.
+              Знижка <strong>-30%</strong> вже врахована.
             </p>
           </div>
 
@@ -1371,14 +1451,59 @@
       </div>
     </section>
 
-    <!-- ФУТЕР -->
-    <footer>
-      <div>© <span id="year"></span> Lumière LPG Studio, Ірпінь. Endospheres · LPG · пресотерапія.</div>
-      <div>
-        Instagram: <a href="https://www.instagram.com/lumiere.lpg.studio" target="_blank">@lumiere.lpg.studio</a>
+   <!-- ФУТЕР -->
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <!-- БРЕНД -->
+    <div class="footer-brand">
+      <div class="footer-logo">Lumière LPG Studio</div>
+      <div class="footer-desc">
+        Endospheres · LPG · Пресотерапія<br>
+        Ірпінь
       </div>
-    </footer>
+    </div>
+
+    <!-- НАВІГАЦІЯ -->
+    <div class="footer-nav">
+      <div class="footer-title">Навігація</div>
+      <a href="#about">Про курс</a>
+      <a href="#program">Програма</a>
+      <a href="#reviews">Відгуки</a>
+      <a href="#multi-pay">Оплата</a>
+    </div>
+
+    <!-- КОНТАКТИ -->
+    <div class="footer-contacts">
+      <div class="footer-title">Контакти</div>
+
+      <a href="tel:+380XXXXXXXXX" class="footer-phone">
+        <!-- Phone SVG -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M4 5c0 8.284 6.716 15 15 15l1-4-4-2-2 3c-3-1-5-3-6-6l3-2-2-4-4 1z"
+                stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        </svg>
+        +38 (0__) ___-__-__
+      </a>
+
+      <a href="https://www.instagram.com/lumiere.lpg.studio" target="_blank" class="footer-instagram">
+        <!-- Instagram SVG -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+        </svg>
+        @lumiere.lpg.studio
+      </a>
+    </div>
+
   </div>
+
+  <div class="footer-bottom">
+    © <span id="year"></span> Lumière LPG Studio
+  </div>
+</footer>
+
 
   <script>
 
@@ -1424,14 +1549,14 @@
       });
     }
 
-    // Ціни до знижки -40% (для інформації в JS)
+    // Ціни до знижки -30% (для інформації в JS)
     const prices = {
       basic:   { online: 2190, offline: 4490 },
       pro:     { online: 2490, offline: 4950 },
       expert:  { online: 2790, offline: 5490 }
     };
 
-    // Монолінки з урахуванням -40%
+    // Монолінки з урахуванням -30%
     const monolinks = {
       basic: {
         online:  "https://pay.mbnk.biz/251116CnZf8EXgSRpz5o", // 1314 грн
@@ -1464,7 +1589,7 @@
       }
 
       const base = prices[level][format];
-      const discount = Math.round(base * 0.6); // -40%
+      const discount = Math.round(base * 0.6); // -30%
 
       payAmountEl.textContent = discount;
       paySummary.style.display = "block";
