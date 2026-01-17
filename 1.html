@@ -504,21 +504,46 @@
       color: var(--accent-2);
     }
 
-    /* Відгуки */
-    .reviews-strip {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 10px;
-      margin-top: 16px;
-    }
+    /* ГАЛЕРЕЯ ВІДГУКІВ */
+.reviews-slider {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 10px 2px 6px;
+  margin-top: 18px;
 
-    .review-img {
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid #ffffff22;
-      background: #111;
-      aspect-ratio: 9 / 16;
-    }
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.reviews-slider::-webkit-scrollbar {
+  height: 6px;
+}
+
+.reviews-slider::-webkit-scrollbar-thumb {
+  background: #ffffff33;
+  border-radius: 10px;
+}
+
+.review-slide {
+  flex: 0 0 260px; /* ширина картки */
+  aspect-ratio: 9 / 16;
+
+  border-radius: 18px;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid #ffffff22;
+
+  scroll-snap-align: start;
+}
+
+.review-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 
     /* FAQ */
     .faq-grid {
@@ -985,24 +1010,31 @@
       </div>
     </section>
 
-    <!-- ВІДГУКИ (фото) -->
-    <section class="section" id="reviews">
-      <div class="section-header">
-        <div class="section-eyebrow">відгуки</div>
-        <h2 class="section-title">Що кажуть студенти</h2>
-        <p class="section-subtitle">
-          Сторіс та відгуки з навчань та відгкуки клієнтів.
-        </p>
-      </div>
+    <!-- ГАЛЕРЕЯ ВІДГУКІВ -->
+<section class="section" id="reviews">
+  <div class="section-header">
+    <div class="section-eyebrow">відгуки</div>
+    <h2 class="section-title">Що кажуть студенти</h2>
+    <p class="section-subtitle">
+      Сторіс та відгуки з навчань та відгуки клієнтів.
+    </p>
+  </div>
 
-      <div class="reviews-strip">
-        <!-- Підстав скріни з Instagram -->
-        <div class="review-img"><img src="/lumiere-landing/1.jpg" alt="Відгук 1"></div>
-        <div class="review-img"><img src="/lumiere-landing/2.jpg" alt="Відгук 2"></div>
-        <div class="review-img"><img src="/lumiere-landing/3.jpg" alt="Відгук 3"></div>
-        <div class="review-img"><img src="/lumiere-landing/5.jpg" alt="Відгук 4"></div>
-      </div>
-    </section>
+  <div class="reviews-slider">
+    <div class="review-slide">
+      <img src="/lumiere-landing/1.jpg" alt="Відгук 1">
+    </div>
+    <div class="review-slide">
+      <img src="/lumiere-landing/2.jpg" alt="Відгук 2">
+    </div>
+    <div class="review-slide">
+      <img src="/lumiere-landing/3.jpg" alt="Відгук 3">
+    </div>
+    <div class="review-slide">
+      <img src="/lumiere-landing/5.jpg" alt="Відгук 4">
+    </div>
+  </div>
+</section>
 
     <!-- FAQ -->
     <section class="section" id="faq">
