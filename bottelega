@@ -178,7 +178,7 @@ function payNow() {
   }
 
   // ВСТАВ СЮДИ ПОСИЛАННЯ НА ПЛАТІЖНУ СИСТЕМУ
-  window.location.href = "https://your-payment-link.com";
+  window.location.href = "https://yourb-payment-link.com";
 }
 </script>
 
